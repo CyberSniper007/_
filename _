@@ -1,0 +1,147 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+local StarterGui = game:GetService("StarterGui")
+local Tp_UI = Instance.new("ScreenGui")
+local Main_Frame = Instance.new("Frame")
+local spawn_Button = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local UICorner_2 = Instance.new("UICorner")
+local Tp_Button = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local title = Instance.new("TextLabel")
+local DC_Button = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+
+
+local C = false
+local A_1 = "UI"
+local A_2 = "SpawnCar"
+local A_3 = "Nero"
+local Event = game:GetService("ReplicatedStorage").Remote.RemoteFunction
+
+
+--Properties:
+
+Tp_UI.Name = "Tp_UI"
+Tp_UI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Tp_UI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Main_Frame.Name = "Main_Frame"
+Main_Frame.Parent = Tp_UI
+Main_Frame.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
+Main_Frame.Position = UDim2.new(0.346354187, 0, 0.194624647, 0)
+Main_Frame.Size = UDim2.new(0, 360, 0, 368)
+Main_Frame.Draggable = true
+Main_Frame.Active = true
+Main_Frame.Selectable = true
+
+spawn_Button.Name = "spawn_Button"
+spawn_Button.Parent = Main_Frame
+spawn_Button.BackgroundColor3 = Color3.fromRGB(74, 74, 74)
+spawn_Button.Position = UDim2.new(0.219444439, 0, 0.3125, 0)
+spawn_Button.Size = UDim2.new(0, 200, 0, 50)
+spawn_Button.Font = Enum.Font.SourceSans
+spawn_Button.Text = "spawn"
+spawn_Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+spawn_Button.TextScaled = true
+spawn_Button.TextSize = 14.000
+spawn_Button.TextWrapped = true
+spawn_Button.MouseButton1Click:Connect(function()
+	C = true
+	Event:InvokeServer(A_1, A_2, A_3)
+	StarterGui:SetCore("SendNotification", {
+		Title = "spawn";
+		Text = "PLEASE WAIT!"
+	})
+	task.wait(1)
+	StarterGui:SetCore("SendNotification", {
+		Title = "WARNING";
+		Text = "WARNING: don't spawn a new or different car or it won't work!"
+	})
+end)
+
+
+UICorner.Parent = spawn_Button
+
+UICorner_2.Parent = Main_Frame
+
+Tp_Button.Name = "Tp_Button"
+Tp_Button.Parent = Main_Frame
+Tp_Button.BackgroundColor3 = Color3.fromRGB(74, 74, 74)
+Tp_Button.Position = UDim2.new(0.219444439, 0, 0.551630437, 0)
+Tp_Button.Size = UDim2.new(0, 200, 0, 50)
+Tp_Button.Font = Enum.Font.SourceSans
+Tp_Button.Text = "Tp"
+Tp_Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+Tp_Button.TextScaled = true
+Tp_Button.TextSize = 14.000
+Tp_Button.TextWrapped = true
+Tp_Button.MouseButton1Click:Connect(function()
+	StarterGui:SetCore("SendNotification", {
+		Title = "System";
+		Text = "PLEASE WAIT!"
+	})
+	loadstring(game:HttpGet(('https://pastebin.com/raw/v0RHqrY8'),true))()
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = 540
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+	for i = 1, 5 do
+		local S = game:GetService("Workspace"):FindFirstChild("Vehicles"):FindFirstChild("Car_"..game.Players.LocalPlayer.Name):FindFirstChild("PassengerSeat")
+		wait(2)
+		S:Sit(game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"))
+	end
+	StarterGui:SetCore("SendNotification", {
+		Title = "System";
+		Text = "Ready!"
+	})
+end)
+
+
+UICorner_3.Parent = Tp_Button
+
+title.Name = "title"
+title.Parent = Main_Frame
+title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+title.BackgroundTransparency = 1.000
+title.Size = UDim2.new(0, 359, 0, 50)
+title.Font = Enum.Font.SourceSans
+title.Text = "Teleport (CH 2)"
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.TextScaled = true
+title.TextSize = 14.000
+title.TextWrapped = true
+
+DC_Button.Name = "DC_Button"
+DC_Button.Parent = Main_Frame
+DC_Button.BackgroundColor3 = Color3.fromRGB(250, 222, 4)
+DC_Button.Position = UDim2.new(0.219444439, 0, 0.777173936, 0)
+DC_Button.Size = UDim2.new(0, 200, 0, 50)
+DC_Button.Font = Enum.Font.SourceSans
+DC_Button.Text = "Discord"
+DC_Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+DC_Button.TextScaled = true
+DC_Button.TextSize = 14.000
+DC_Button.TextWrapped = true
+DC_Button.MouseButton1Click:Connect(function()
+	setclipboard("discord.gg/uQtyxC4Ttn")
+	StarterGui:SetCore("SendNotification", {
+		Title = "Discord";
+		Text = "discord link has been added to the clipboard!"
+	})
+end)
+
+UICorner_4.Parent = DC_Button
+
+
+game:GetService("Workspace"):FindFirstChild("Vehicles").ChildAdded:Connect(function(obj)
+	print(obj.Name)
+	if C == true then
+		if obj.Name == A_3 then 
+		C = false
+		obj.Name = "Car_"..game.Players.LocalPlayer.Name
+		else
+		print("falsch")
+		end
+	end   
+end)
