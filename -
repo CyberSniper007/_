@@ -17,341 +17,72 @@ if game.PlaceId == 1224212277 then
     end)
     
 
-    MainSection:NewButton("Silent aim", "Helps your Aim", function()
-        local uis = game:GetService("UserInputService")
-
-            uis.InputBegan:Connect(function(asd)
-                if asd.UserInputType == Enum.UserInputType.MouseButton1 then
-                    for i,v in pairs(game.Workspace:GetChildren()) do
-                        if v:FindFirstChild("Head") then
-                        for i = 1,1 do
-                        local args = {
-                        [1] = "VR",
-                        [2] = v.Head,
-                        }
-
-                        game:GetService("ReplicatedStorage").Event:FireServer(unpack(args))
-                        end
-                    end
-                end
-            end
-        end)
-    end)
-
-
-    MainSection:NewButton("OP Silent aim", "Helps your Aim", function()
-        local uis = game:GetService("UserInputService")
-
-            uis.InputBegan:Connect(function(asd)
-                if asd.UserInputType == Enum.UserInputType.MouseButton1 then
-                    for i,v in pairs(game.Workspace:GetChildren()) do
-                        if v:FindFirstChild("Head") then
-                        for i = 1,5 do
-                        local args = {
-                        [1] = "VR",
-                        [2] = v.Head,
-                        }
-
-                        game:GetService("ReplicatedStorage").Event:FireServer(unpack(args))
-                        end
-                    end
-                end
-            end
-        end)
-    end)
-
-
-
-    MainSection:NewButton("One time Auto Rob", "Farmes you some cash $ ", function()
-        _G.MaxPlayers = 7
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/ThisUsernameWasObfuscatedUsingPSUObf40A/Scripts/main/MadCityAutoRob"))()
-    end)
-   
-    MainSection:NewButton("Auto Rob", "Farmes you some cash $ ", function()
-        loadstring(game:HttpGet("https://system-exodus.com/scripts/madcity/MadLadsAR.lua",true))()
-    end)
-    
-    MainSection:NewButton("Xp Farm", "Helps you level up (auto farm xp for you)", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/SoldoxD/SoldoxD/main/Textdokument%20(neu)%20(4).txt",true))()
-    end)
-
-
 
 
     --Teleport/Robs
-    local Tp = Window:NewTab("Teleport/Robs")
-    local TpSection = Tp:NewSection("Main")
+    local Tp = Window:NewTab("Teleport")
+    local TpsSection = Tp:NewSection("Only Works if nothing is above you")
 
-
-    TpSection:NewButton("Tp: Prison out", "-", function()
-        local _speed=2500
-        function tp(...)
-           local plr=game.Players.LocalPlayer
-           local args={...}
-           if typeof(args[1])=="number"and args[2]and args[3]then
-              args=Vector3.new(args[1],args[2],args[3])
-           elseif typeof(args[1])=="Vector3" then
-               args=args[1]    
-           elseif typeof(args[1])=="CFrame" then
-               args=args[1].Position
-           end
-           local dist=(plr.Character.HumanoidRootPart.Position-args).Magnitude
-           game:GetService("TweenService"):Create(
-               plr.Character.HumanoidRootPart,
-               TweenInfo.new(dist/_speed,Enum.EasingStyle.Linear),
-               {CFrame=CFrame.new(args)}
-           ):Play()
-        end
-        
-        tp(-893, 53, -2632)
+    TpsSection:NewButton("Crimbase", "Thx to pascaldercoole1#6129 for help", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/1"))();
     end)
 
 
-
-TpSection:NewButton("Tp: Crimbase", "-", function()
-    local _speed=2500
-    function tp(...)
-       local plr=game.Players.LocalPlayer
-       local args={...}
-       if typeof(args[1])=="number"and args[2]and args[3]then
-          args=Vector3.new(args[1],args[2],args[3])
-       elseif typeof(args[1])=="Vector3" then
-           args=args[1]    
-       elseif typeof(args[1])=="CFrame" then
-           args=args[1].Position
-       end
-       local dist=(plr.Character.HumanoidRootPart.Position-args).Magnitude
-       game:GetService("TweenService"):Create(
-           plr.Character.HumanoidRootPart,
-           TweenInfo.new(dist/_speed,Enum.EasingStyle.Linear),
-           {CFrame=CFrame.new(args)}
-       ):Play()
-    end
-    
-    tp(2101, 27, 426)
+    TpsSection:NewButton("Gun store", "Thx to pascaldercoole1#6129 for help", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/2"))();
 end)
 
 
+TpsSection:NewButton("Casino", "Thx to pascaldercoole1#6129 for help", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/3"))();
+end)
 
-TpSection:NewButton("Tp: Police", "-", function()
-    local _speed=2500
-    function tp(...)
-       local plr=game.Players.LocalPlayer
-       local args={...}
-       if typeof(args[1])=="number"and args[2]and args[3]then
-          args=Vector3.new(args[1],args[2],args[3])
-       elseif typeof(args[1])=="Vector3" then
-           args=args[1]    
-       elseif typeof(args[1])=="CFrame" then
-           args=args[1].Position
-       end
-       local dist=(plr.Character.HumanoidRootPart.Position-args).Magnitude
-       game:GetService("TweenService"):Create(
-           plr.Character.HumanoidRootPart,
-           TweenInfo.new(dist/_speed,Enum.EasingStyle.Linear),
-           {CFrame=CFrame.new(args)}
-       ):Play()
-    end
-    
-    tp(-1066, 67, -3013)
+
+TpsSection:NewButton("Club", "Thx to pascaldercoole1#6129 for help", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/4"))();
 end)
 
 
 
 
-TpSection:NewButton("Tp: Gun Store", "-", function()
-    local _speed=2500
-    function tp(...)
-       local plr=game.Players.LocalPlayer
-       local args={...}
-       if typeof(args[1])=="number"and args[2]and args[3]then
-          args=Vector3.new(args[1],args[2],args[3])
-       elseif typeof(args[1])=="Vector3" then
-           args=args[1]    
-       elseif typeof(args[1])=="CFrame" then
-           args=args[1].Position
-       end
-       local dist=(plr.Character.HumanoidRootPart.Position-args).Magnitude
-       game:GetService("TweenService"):Create(
-           plr.Character.HumanoidRootPart,
-           TweenInfo.new(dist/_speed,Enum.EasingStyle.Linear),
-           {CFrame=CFrame.new(args)}
-       ):Play()
-    end
-    
-    tp(-1616, 42, 688)
-end)
-
-
-TpSection:NewButton("Tp: Casino", "-", function()
-    local _speed=2500
-function tp(...)
-   local plr=game.Players.LocalPlayer
-   local args={...}
-   if typeof(args[1])=="number"and args[2]and args[3]then
-      args=Vector3.new(args[1],args[2],args[3])
-   elseif typeof(args[1])=="Vector3" then
-       args=args[1]    
-   elseif typeof(args[1])=="CFrame" then
-       args=args[1].Position
-   end
-   local dist=(plr.Character.HumanoidRootPart.Position-args).Magnitude
-   game:GetService("TweenService"):Create(
-       plr.Character.HumanoidRootPart,
-       TweenInfo.new(dist/_speed,Enum.EasingStyle.Linear),
-       {CFrame=CFrame.new(args)}
-   ):Play()
-    end
-
-    tp(1696, 37, 755)
+TpsSection:NewButton("Police Station", "Thx to pascaldercoole1#6129 for help", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/5"))();
 end)
 
 
 
-TpSection:NewButton("Tp: Clup", "-", function()
-    local _speed=2500
-function tp(...)
-   local plr=game.Players.LocalPlayer
-   local args={...}
-   if typeof(args[1])=="number"and args[2]and args[3]then
-      args=Vector3.new(args[1],args[2],args[3])
-   elseif typeof(args[1])=="Vector3" then
-       args=args[1]    
-   elseif typeof(args[1])=="CFrame" then
-       args=args[1].Position
-   end
-   local dist=(plr.Character.HumanoidRootPart.Position-args).Magnitude
-   game:GetService("TweenService"):Create(
-       plr.Character.HumanoidRootPart,
-       TweenInfo.new(dist/_speed,Enum.EasingStyle.Linear),
-       {CFrame=CFrame.new(args)}
-   ):Play()
-    end
-
-    tp(1102, 53, 165)
+TpsSection:NewButton("Bank", "Thx to pascaldercoole1#6129 for help", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/6"))();
 end)
 
 
 
-TpSection:NewButton("Tp: Bank", "-", function()
-    local _speed=2500
-function tp(...)
-   local plr=game.Players.LocalPlayer
-   local args={...}
-   if typeof(args[1])=="number"and args[2]and args[3]then
-      args=Vector3.new(args[1],args[2],args[3])
-   elseif typeof(args[1])=="Vector3" then
-       args=args[1]    
-   elseif typeof(args[1])=="CFrame" then
-       args=args[1].Position
-   end
-   local dist=(plr.Character.HumanoidRootPart.Position-args).Magnitude
-   game:GetService("TweenService"):Create(
-       plr.Character.HumanoidRootPart,
-       TweenInfo.new(dist/_speed,Enum.EasingStyle.Linear),
-       {CFrame=CFrame.new(args)}
-   ):Play()
-    end
-
-    tp(630, 51, 445)
-end)
-
-
-TpSection:NewButton("Tp: Diamond", "-", function()
-    local _speed=2500
-    function tp(...)
-       local plr=game.Players.LocalPlayer
-       local args={...}
-       if typeof(args[1])=="number"and args[2]and args[3]then
-          args=Vector3.new(args[1],args[2],args[3])
-       elseif typeof(args[1])=="Vector3" then
-           args=args[1]    
-       elseif typeof(args[1])=="CFrame" then
-           args=args[1].Position
-       end
-       local dist=(plr.Character.HumanoidRootPart.Position-args).Magnitude
-       game:GetService("TweenService"):Create(
-           plr.Character.HumanoidRootPart,
-           TweenInfo.new(dist/_speed,Enum.EasingStyle.Linear),
-           {CFrame=CFrame.new(args)}
-       ):Play()
-    end
-    
-    tp(-73, 86, 829)
-end)
-
-
-TpSection:NewButton("Tp: Pyramid", "-", function()
-    local _speed=2500
-    function tp(...)
-       local plr=game.Players.LocalPlayer
-       local args={...}
-       if typeof(args[1])=="number"and args[2]and args[3]then
-          args=Vector3.new(args[1],args[2],args[3])
-       elseif typeof(args[1])=="Vector3" then
-           args=args[1]    
-       elseif typeof(args[1])=="CFrame" then
-           args=args[1].Position
-       end
-       local dist=(plr.Character.HumanoidRootPart.Position-args).Magnitude
-       game:GetService("TweenService"):Create(
-           plr.Character.HumanoidRootPart,
-           TweenInfo.new(dist/_speed,Enum.EasingStyle.Linear),
-           {CFrame=CFrame.new(args)}
-       ):Play()
-    end
-    
-    tp(-1048, 18, -516)
+TpsSection:NewButton("Diamond", "Thx to pascaldercoole1#6129 for help", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/7"))();
 end)
 
 
 
-TpSection:NewButton("Tp: Airport", "-", function()
-    local _speed=2500
-function tp(...)
-   local plr=game.Players.LocalPlayer
-   local args={...}
-   if typeof(args[1])=="number"and args[2]and args[3]then
-      args=Vector3.new(args[1],args[2],args[3])
-   elseif typeof(args[1])=="Vector3" then
-       args=args[1]    
-   elseif typeof(args[1])=="CFrame" then
-       args=args[1].Position
-   end
-   local dist=(plr.Character.HumanoidRootPart.Position-args).Magnitude
-   game:GetService("TweenService"):Create(
-       plr.Character.HumanoidRootPart,
-       TweenInfo.new(dist/_speed,Enum.EasingStyle.Linear),
-       {CFrame=CFrame.new(args)}
-   ):Play()
-    end
-
-    tp(-2167, 28, -1422)
+TpsSection:NewButton("Club", "Thx to pascaldercoole1#6129 for help", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/8"))();
 end)
 
 
-TpSection:NewButton("Tp: Train", "-", function()
-    if game.Workspace.Train ~= nil then
-        local _speed=2500
-    function tp(...)
-       local plr=game.Players.LocalPlayer
-       local args={...}
-       if typeof(args[1])=="number"and args[2]and args[3]then
-          args=Vector3.new(args[1],args[2],args[3])
-       elseif typeof(args[1])=="Vector3" then
-           args=args[1]    
-       elseif typeof(args[1])=="CFrame" then
-           args=args[1].Position
-       end
-       local dist=(plr.Character.HumanoidRootPart.Position-args).Magnitude
-       game:GetService("TweenService"):Create(
-           plr.Character.HumanoidRootPart,
-           TweenInfo.new(dist/_speed,Enum.EasingStyle.Linear),
-           {CFrame=CFrame.new(args)}
-       ):Play()
-    end
-    tp(game.Workspace.Train.Mid1.Yeet.Position)
-    end
+
+TpsSection:NewButton("Military base", "Thx to pascaldercoole1#6129 for help", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/9"))();
+end)
+
+
+
+TpsSection:NewButton("Small City", "Thx to pascaldercoole1#6129 for help", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/10"))();
+end)
+
+
+
+TpsSection:NewButton("Pirate island", "Thx to pascaldercoole1#6129 for help", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/11"))();
 end)
 
 
@@ -359,773 +90,33 @@ end)
 
 
 
+    -- Silent aim
+    local Weapon = Window:NewTab("Silent aim")
+    local WeaponSection = Weapon:NewSection("Silent aim / Wallbang")
 
-
-
-
-    TpSection:NewButton("Rob Ship", "Robs the Ship", function()
-        local _speed=1000
-        function tp(...)
-           local plr=game.Players.LocalPlayer
-           local args={...}
-           if typeof(args[1])=="number"and args[2]and args[3]then
-              args=Vector3.new(args[1],args[2],args[3])
-           elseif typeof(args[1])=="Vector3" then
-               args=args[1]    
-           elseif typeof(args[1])=="CFrame" then
-               args=args[1].Position
-           end
-           local dist=(plr.Character.HumanoidRootPart.Position-args).Magnitude
-           game:GetService("TweenService"):Create(
-               plr.Character.HumanoidRootPart,
-               TweenInfo.new(dist/_speed,Enum.EasingStyle.Linear),
-               {CFrame=CFrame.new(args)}
-           ):Play()
-        end
-        
-        tp(2510, 81, 335)
-        
-        local Number = 0
-        workspace.Gravity = tonumber(Number) or 196.2 
-        
-        wait(1.5)
-        
-        
-        for i = 1, 200 do
-            tp(2510, 81, 335)
-            wait(0.1)
-        end
-        
-        wait(5)
-        
-        local Number = 196.2 
-        workspace.Gravity = tonumber(Number) or 196.2 
-        tp(2101, 27, 426)
-    end)
-
-
-    TpSection:NewButton("Small Robs" , "Robs all small stuff",function()
-    game:GetService("StarterGui"):SetCore("SendNotification",{     
-        Title = "Bypass TP",     
-        Text = "Now Players Can't See you But you can Interact Objects and Teleport to Players",
-        Duration = 15, })
-                     game.Players.LocalPlayer.Character.HumanoidRootPart.Parent = nil
-        for i,v in pairs(getnilinstances()) do 
-           if v.Name == "HumanoidRootPart" then
-               v.Parent = game.Players.LocalPlayer.Character
-           end
-        end
-        wait(2)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.Parent = nil
-for i,v in pairs(getnilinstances()) do 
-  if v.Name == "HumanoidRootPart" then
-      v.Parent = game.Players.LocalPlayer.Character
-  end
-end
-
-local busy = false
-local busy_with = "busy_with"
-local thing = "thing"
-local busy_str = "Can't rob %s because you are busy with %s"
-local not_finished = "Can't rob other things because the %s rob isn't finished"
-
-local cashRegister = coroutine.wrap(function()
-  while wait(2) do
-  pcall(function()
-  if busy == false then
- for i, v in pairs(workspace.ObjectSelection:GetChildren()) do
-         if v.Name == "CashRegister" then
-         local part = v:FindFirstChildOfClass("Part")
-         if part.Name ~= "Nope" then
-         busy = true
-         busy_with = "cash registers"
-         local pos = v.SmashCash.Position
-                         for i = 1, math.random(5,10) do
-                             wait(.1)
-                             game.Players.LocalPlayer.Character.HumanoidRootPart.Position = pos
-                         end
-             wait(0.3)
-             v.SmashCash.SmashCash.Event:FireServer()
-             wait(2)
-             if part.Name ~= "Nope" then
-             warn(string.format(not_finished, "cash registers"))
-             else
-             busy = false
-             end
-         end  
-         end
- end
-else
-  thing = "cash registers"
-  warn(string.format(busy_str, thing, busy_with))
-end    
-  end)
-  end
-end)
-
-local diamondBox = coroutine.wrap(function()
-  while wait(2) do
-  pcall(function()
-  if busy == false then
- for i, v in pairs(workspace.ObjectSelection:GetChildren()) do
-         if v.Name == "DiamondBox" then
-         local part = v:FindFirstChildOfClass("Part")
-         if part.Name ~= "Nope" then
-         busy = true
-         busy_with = "diamond boxes"
-         local pos = v.SmashCash.Position
-                         for i = 1, math.random(5,10) do
-                             wait(.1)
-                             game.Players.LocalPlayer.Character.HumanoidRootPart.Position = pos
-                         end
-             wait(0.3)
-             v.SmashCash.SmashCash.Event:FireServer()
-             wait(2)
-             if part.Name ~= "Nope" then
-             warn(string.format(not_finished, "diamond boxes"))
-             else
-             busy = false
-             end
-         end  
-         end
- end
-  else
-  thing = "diamond boxes"
-  warn(string.format(busy_str, thing, busy_with))
-end    
-  end)
-  end
-end)
-
-local safe = coroutine.wrap(function()
-  while wait(2) do
-  pcall(function()
-  if busy == false then
- for i, v in pairs(workspace.ObjectSelection:GetChildren()) do
-         if v.Name == "Safe" then
-         local part = v:FindFirstChildOfClass("Part")
-         if part.Name ~= "Nope" then
-         busy = true
-         busy_with = "safes"
-         local pos = v.SmashCash.Position
-                         for i = 1, math.random(5,10) do
-                             wait(.1)
-                             game.Players.LocalPlayer.Character.HumanoidRootPart.Position = pos
-                         end
-             wait(0.3)
-             v.SmashCash.SmashCash.Event:FireServer()
-             wait(2)
-             if part.Name ~= "Nope" then
-             warn(string.format(not_finished, "safes"))
-             else
-             busy = false
-             end
-         end  
-         end
- end
-  else
-  thing = "safes"
-  warn(string.format(busy_str, thing, busy_with))
-end    
-  end)
-  end
-end)
-
-local tipJar = coroutine.wrap(function()
-  while wait(2) do
-  pcall(function()
-  if busy == false then
- for i, v in pairs(workspace.ObjectSelection:GetChildren()) do
-         if v.Name == "TipJar" then
-         local part = v:FindFirstChildOfClass("Part")
-         if part.Name == "SmashCash" then
-         busy = true
-         busy_with = "tip jars"
-         local pos = v.SmashCash.Position
-                         for i = 1, math.random(5,10) do
-                             wait(.1)
-                             game.Players.LocalPlayer.Character.HumanoidRootPart.Position = pos
-                         end
-             wait(0.3)
-             v.SmashCash.SmashCash.Event:FireServer()
-             wait(2)
-             if part.Name == "SmashCash" then
-             warn(string.format(not_finished, "tip jars"))
-             else
-             busy = false
-             end
-         end  
-         end
- end
-  else
-  thing = "tip jars"
-  warn(string.format(busy_str, thing, busy_with))
-end    
-  end)
-  end
-end)
-
-local cash = coroutine.wrap(function()
-  while wait(2) do
-  pcall(function()
-  if busy == false then
- for i, v in pairs(workspace.ObjectSelection:GetChildren()) do
-         if v.Name == "Cash" then
-         local part = v:FindFirstChildOfClass("MeshPart")
-         if part.Name == "Cash" then
-         busy = true
-         busy_with = "cash"
-         local pos = v.Cash.Position
-                         for i = 1, math.random(5,10) do
-                             wait(.1)
-                             game.Players.LocalPlayer.Character.HumanoidRootPart.Position = pos
-                         end
-             wait(0.3)
-             v.Cash.Cash.Event:FireServer()
-             wait(2)
-             if part.Name == "Cash" then
-             warn(string.format(not_finished, "cash"))
-             else
-             busy = false
-             end
-         end  
-         end
- end
-  else
-  thing = "cash"
-  warn(string.format(busy_str, thing, busy_with))
-end    
-  end)
-  end
-end)
-
-local tv = coroutine.wrap(function()
-  while wait(2) do
-  pcall(function()
-  if busy == false then
- for i, v in pairs(workspace.ObjectSelection:GetChildren()) do
-         if v.Name == "TV" then
-         local part = v:FindFirstChildOfClass("Part")
-         if part.Name ~= "Nope" then
-         busy = true
-         busy_with = "TVs"
-         local pos = v.StealTV.Position
-                         for i = 1, math.random(5,10) do
-                             wait(.1)
-                             game.Players.LocalPlayer.Character.HumanoidRootPart.Position = pos
-                         end
-             wait(0.3)
-             v.StealTV.StealTV.Event:FireServer()
-             wait(2)
-             if part.Name ~= "Nope" then
-             warn(string.format(not_finished, "TVs"))
-             else
-             busy = false
-             end
-         end  
-         end
- end
-  else
-  thing = "TVs"
-  warn(string.format(busy_str, thing, busy_with))
-end    
-  end)
-  end
-end)
-
-local dropCrate = coroutine.wrap(function()
-  while wait(2) do
-  pcall(function()
-  if busy == false then
- for i, v in pairs(workspace.ObjectSelection:GetChildren()) do
-         if v.Name == "DropCrate" then
-         local part = v:FindFirstChildOfClass("Part")
-         if part.Name ~= "Nope" then
-         busy = true
-         busy_with = "drop crates"
-         local pos = v.DropCrate.Position
-                         for i = 1, math.random(5,10) do
-                             wait(.1)
-                             game.Players.LocalPlayer.Character.HumanoidRootPart.Position = pos
-                         end
-             wait(0.3)
-             v.DropCrate.DropCrate.Event:FireServer()
-             wait(2)
-             if part.Name ~= "Nope" then
-             warn(string.format(not_finished, "drop crates"))
-             else
-             busy = false
-             end
-         end  
-         end
- end
-  else
-  thing = "drop crates"
-  warn(string.format(busy_str, thing, busy_with))
-end    
-  end)
-  end
-end)
-
-local atm = coroutine.wrap(function()
-  while wait(2) do
-  pcall(function()
-  if busy == false then
- for i, v in pairs(workspace.ObjectSelection:GetChildren()) do
-         if v.Name == "ATM" then
-         local part = v:FindFirstChildOfClass("Part")
-         if part.Name ~= "Nope" then
-         busy = true
-         busy_with = "ATMs"
-         local pos = v.ATM.Position
-                         for i = 1, math.random(5,10) do
-                             wait(.1)
-                             game.Players.LocalPlayer.Character.HumanoidRootPart.Position = pos
-                         end
-             wait(0.3)
-             v.ATM.ATM.Event:FireServer()
-             wait(2)
-             if part.Name ~= "Nope" then
-             warn(string.format(not_finished, "ATMs"))
-             else
-             busy = false
-             end
-         end  
-         end
- end
-  else
-  thing = "ATMs"
-  warn(string.format(busy_str, thing, busy_with))
-end    
-  end)
-  end
-end)
-
-cashRegister()
-diamondBox()
-safe()
-tipJar()
-cash()
-tv()
-atm()
-end)
-
-
-
-
-
-
-
-
-    -- Weapon Mods
-    local Weapon = Window:NewTab("Weapon Mods")
-    local WeaponSection = Weapon:NewSection("Weapon Mods")
-
-    WeaponSection:NewButton("Inf Ammo" , "sets your ammo to inf",function()
-        game:GetService("RunService").RenderStepped:Connect(function()
-            local function main(v)
-               if v.Name == "RifleScript" or v.Name == "ShotgunScript" or v.Name == "PistolScript" or v.Name == "TazerScript" or v.Name == "PowerScript" then
-                   local a = getsenv(v)
-                   if debug.getupvalues(a.Reload) then
-                       debug.setupvalue(a.Reload, 2, math.huge)
-                   end
-               end
-            end
+    WeaponSection:NewButton("Silent Aim", "Original by Cesare", function()
             
-            for _, v in pairs(game.Players.LocalPlayer.Backpack:GetDescendants()) do main(v) end
-            for _, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do main(v) end
-        end)
-    end)
+        local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+
+        local PhantomForcesWindow = Library:NewWindow("Aim by _Neko#4061")
+
+        local Silent = PhantomForcesWindow:NewSection("Silent Aim")
 
 
-    WeaponSection:NewButton("2x Mp5", "?",function()
-
-    local backpack = game.Players.LocalPlayer.Backpack
-    local gun      = backpack['MP5'] 
-    local ss       = gun['RifleScript']
-    for i          = 1,1 do 
-    ss:Clone().Parent = gun
-       end
-    end)
-
-
-    WeaponSection:NewButton("2x Ak47", "?",function()
-
-        local backpack = game.Players.LocalPlayer.Backpack
-        local gun      = backpack['AK47'] 
-        local ss       = gun['RifleScript']
-        for i          = 1,1 do 
-        ss:Clone().Parent = gun
-           end
+        Silent:CreateSlider("Fov", 25, 800, 260, false, function(value)
+            getgenv().fov = value
         end)
 
 
-    WeaponSection:NewButton("2x Shotgun", "?",function()
-
-    local backpack = game.Players.LocalPlayer.Backpack
-    local gun      = backpack['Shotgun'] 
-    local ss       = gun['ShotgunScript']
-    for i          = 1,1 do 
-    ss:Clone().Parent = gun
-       end
-    end)
-
-
-    WeaponSection:NewButton("2x Spas", "?",function()
-
-	local backpack = game.Players.LocalPlayer.Backpack
-	local gun      = backpack['SPAS'] 
-	local ss       = gun['ShotgunScript']
-	for i          = 1,1 do 
-	ss:Clone().Parent = gun
-         end
-    end)
-
-        WeaponSection:NewButton("2x SCAR", "?",function()
-
-	local backpack = game.Players.LocalPlayer.Backpack
-	local gun      = backpack['SCAR'] 
-	local ss       = gun['RifleScript']
-	for i          = 1,1 do 
-	ss:Clone().Parent = gun
-         end
-    end)
-
-            WeaponSection:NewButton("2x M4A1", "?",function()
-
-	local backpack = game.Players.LocalPlayer.Backpack
-	local gun      = backpack['M4A1'] 
-	local ss       = gun['RifleScript']
-	for i          = 1,1 do 
-	ss:Clone().Parent = gun
-         end
-    end)
-
-            WeaponSection:NewButton("2x AWP", "?",function()
-
-	local backpack = game.Players.LocalPlayer.Backpack
-	local gun      = backpack['AWP'] 
-	local ss       = gun['RifleScript']
-	for i          = 1,1 do 
-	ss:Clone().Parent = gun
-         end
-    end)
-
-    WeaponSection:NewButton("2x Sniper", "?",function()
-
-        local backpack = game.Players.LocalPlayer.Backpack
-        local gun      = backpack['Sniper'] 
-        local ss       = gun['RifleScript']
-        for i          = 1,1 do 
-        ss:Clone().Parent = gun
-             end
+        Silent:CreateDropdown("DropDown", {"Head", "Torso"}, 2, function(X)
+            getgenv().bodypart = X
         end)
 
 
-
-        WeaponSection:NewButton("2x Deagle", "?",function()
-
-            local backpack = game.Players.LocalPlayer.Backpack
-            local gun      = backpack['Deagle'] 
-            local ss       = gun['PistolScript']
-            for i          = 1,1 do 
-            ss:Clone().Parent = gun
-                 end
-            end)
-
-        WeaponSection:NewButton("2x Pistol", "?",function()
-
-            local backpack = game.Players.LocalPlayer.Backpack
-               local gun      = backpack['Pistol'] 
-               local ss       = gun['PistolScript']
-            for i          = 1,1 do 
-             ss:Clone().Parent = gun
-                   end
-               end)
-
-
-            WeaponSection:NewButton("2x Pistol-S", "?",function()
-
-             local backpack = game.Players.LocalPlayer.Backpack
-             local gun      = backpack['Pistol-S'] 
-             local ss       = gun['PistolScript']
-          for i          = 1,1 do 
-           ss:Clone().Parent = gun   
-        end
-    end)
-
-
-    WeaponSection:NewButton("5x Mp5", "?",function()
-
-    local backpack = game.Players.LocalPlayer.Backpack
-    local gun      = backpack['MP5'] 
-    local ss       = gun['RifleScript']
-    for i          = 1,5 do 
-    ss:Clone().Parent = gun
-       end
-    end)
-
-
-    WeaponSection:NewButton("5x Ak47", "?",function()
-
-        local backpack = game.Players.LocalPlayer.Backpack
-        local gun      = backpack['AK47'] 
-        local ss       = gun['RifleScript']
-        for i          = 1,5 do 
-        ss:Clone().Parent = gun
-           end
+        Silent:CreateButton("Silent Aim", function()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Cesare0328/my-scripts/main/SAMCH2', true))()
         end)
-
-
-
-
-    WeaponSection:NewButton("5x Shotgun", "?",function()
-
-    local backpack = game.Players.LocalPlayer.Backpack
-    local gun      = backpack['Shotgun'] 
-    local ss       = gun['ShotgunScript']
-    for i          = 1,5 do 
-    ss:Clone().Parent = gun
-       end
     end)
-
-
-    WeaponSection:NewButton("5x Spas", "?",function()
-
-	local backpack = game.Players.LocalPlayer.Backpack
-	local gun      = backpack['SPAS'] 
-	local ss       = gun['ShotgunScript']
-	for i          = 1,5 do 
-	ss:Clone().Parent = gun
-         end
-    end)
-
-
-    WeaponSection:NewButton("5x M4A1", "?",function()
-
-        local backpack = game.Players.LocalPlayer.Backpack
-        local gun      = backpack['M4A1'] 
-        local ss       = gun['RifleScript']
-        for i          = 1,5 do 
-        ss:Clone().Parent = gun
-             end
-        end)
-    
-                WeaponSection:NewButton("5x AWP", "?",function()
-    
-        local backpack = game.Players.LocalPlayer.Backpack
-        local gun      = backpack['AWP'] 
-        local ss       = gun['RifleScript']
-        for i          = 1,5 do 
-        ss:Clone().Parent = gun
-             end
-        end)
-    
-        WeaponSection:NewButton("5x Sniper", "?",function()
-    
-            local backpack = game.Players.LocalPlayer.Backpack
-            local gun      = backpack['Sniper'] 
-            local ss       = gun['RifleScript']
-            for i          = 1,5 do 
-            ss:Clone().Parent = gun
-                 end
-            end)
-    
-    
-    
-            WeaponSection:NewButton("5x Deagle", "?",function()
-    
-                local backpack = game.Players.LocalPlayer.Backpack
-                local gun      = backpack['Deagle'] 
-                local ss       = gun['PistolScript']
-                for i          = 1,5 do 
-                ss:Clone().Parent = gun
-                     end
-                end)
-    
-            WeaponSection:NewButton("5x Pistol", "?",function()
-    
-                local backpack = game.Players.LocalPlayer.Backpack
-                   local gun      = backpack['Pistol'] 
-                   local ss       = gun['PistolScript']
-                for i          = 1,5 do 
-                 ss:Clone().Parent = gun
-                       end
-                   end)
-
-
-                   WeaponSection:NewButton("5x Tec-9", "?",function()
-    
-                    local backpack = game.Players.LocalPlayer.Backpack
-                       local gun      = backpack['TEC9'] 
-                       local ss       = gun['PistolScript']
-                    for i          = 1,5 do 
-                     ss:Clone().Parent = gun
-                           end
-                       end)
-    
-    
-                WeaponSection:NewButton("5x Pistol-S", "?",function()
-    
-                 local backpack = game.Players.LocalPlayer.Backpack
-                 local gun      = backpack['Pistol-S'] 
-                 local ss       = gun['PistolScript']
-              for i          = 1,5 do 
-               ss:Clone().Parent = gun   
-            end
-        end)
-
-
-    WeaponSection:NewButton("10x RPG (makes only 60 damege)", "This script only looks cool",function()
-
-        local backpack = game.Players.LocalPlayer.Backpack
-        local gun      = backpack['RPG'] 
-        local ss       = gun['RifleScript']
-     for i          = 1,9 do 
-      ss:Clone().Parent = gun   
-   end
-end)
-
-
-
-    --Car Mods
-
-    local Car = Window:NewTab("Car Mods")
-    local CarSection = Car:NewSection("Main") 
-
-    CarSection:NewButton("Free Cars/Plans", "You can drive or fly and vehicel", function()
-        loadstring(game:HttpGet("https://pastebin.com/raw/jNwTqd34",true))()
-    end)
-
-
-    CarSection:NewToggle("Hover Car", "", function(ogwe)
-        getgenv().trinkhhnn4nets = ogwe
-            if getgenv().trinkhhnn4nets then
-                game.Workspace.ObjectSelection[game.Players.LocalPlayer.Name.."'s Vehicle"].CarChassis.HoverMode.Value = true
-                else
-                game.Workspace.ObjectSelection[game.Players.LocalPlayer.Name.."'s Vehicle"].CarChassis.HoverMode.Value = false
-            end
-        end)
-
-    CarSection:NewSlider("Max Car Speed", "Changes the Car Speed", 1000, 20, function(Speed1)
-        local a = require(game.Workspace.ObjectSelection[game.Players.LocalPlayer.Name.."'s Vehicle"].Settings)
-        a.MaxSpeed = Speed1
-    end)
-
-
-    CarSection:NewSlider("Car BrakeForce", "Changes the Car BrakeForce", 5000, 5, function(BrakeForce1)
-        local a = require(game.Workspace.ObjectSelection[game.Players.LocalPlayer.Name.."'s Vehicle"].Settings)
-        a.BrakeForce = BrakeForce1
-    end)
-
-    CarSection:NewSlider("Car Height", "Changes the Car Height", 100, 3, function(Height1)
-        local a = require(game.Workspace.ObjectSelection[game.Players.LocalPlayer.Name.."'s Vehicle"].Settings)
-        a.Height = Height1
-    end)
-
-
-
-
-
-
-
-
-    --Get Items
-
-    local Misc = Window:NewTab("Get Items")
-    local MiscSection = Misc:NewSection("Main")   
-
-    MiscSection:NewButton("Gamepass", "Unlock 6 Gamepasses", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/SoldoxD/SoldoxD/main/Mad%20City%20Gamepass.txt",true))()
-    end)
-
-
-    MiscSection:NewButton("Get Deathray", "Gets you Deathray", function()
-        if game.ReplicatedStorage.HeistStatus.Pyramid.Locked.Value == true then
-            game:GetService("StarterGui"):SetCore("SendNotification",{     
-                Title = "Get Deathray Script",     
-                    Text = "Wait to Pyramid Open Again",
-                    Duration = 10, })
-                        else
-                    local _speed=1999
-                    function tp(...)
-                     local plr=game.Players.LocalPlayer
-                     local args={...}
-                     if typeof(args[1])=="number"and args[2]and args[3]then
-                    args=Vector3.new(args[1],args[2],args[3])
-                    elseif typeof(args[1])=="Vector3" then
-                   args=args[1]    
-                    elseif typeof(args[1])=="CFrame" then
-                    args=args[1].Position
-                    end
-                    local dist=(plr.Character.HumanoidRootPart.Position-args).Magnitude
-                game:GetService("TweenService"):Create(
-            plr.Character.HumanoidRootPart,
-        TweenInfo.new(dist/_speed,Enum.EasingStyle.Linear),
-       {CFrame=CFrame.new(args)}
-   ):Play()
-end
-
-tp(-1047.58899, 18.2789993, -479.790009, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-wait(5)
-tp(1044, 51073, 555)
-wait(2)
-for i = 1,10 do
-workspace.ObjectSelection.GoldKey.GoldKey.GoldKey.Event:FireServer()
-end
-wait(2)
-tp(1231.14185, 51051.2344, 381.096191, -1, 0, 0, 0, 1, 0, 0, 0, -1)
-wait(2)
-                tp(-1024, 19, -522)
-                wait(2)
-            tp(865, 31, 990)
-            wait(4)
-            for c = 0,5 do
-        workspace.ObjectSelection.DeathRay.DeathRay.DeathRay.Event:FireServer()
-        end
-        wait(1)
-        tp(200, 100, 200);
-    end
-end)    
-
-
-
-MiscSection:NewButton("Get Jetpack", "Gets you Jetpack", function()  
-    yes = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
-        game.Workspace.ObjectSelection.BossKey.Nope.BossKey.Event:FireServer()
-            local plr = game:service"Players".LocalPlayer;
-            local tween_s = game:service"TweenService";
-            local info = TweenInfo.new(5,Enum.EasingStyle.Quad);
-                function tp(...)
-                local tic_k = tick();
-                local params = {...};
-                local cframe = CFrame.new(params[1],params[2],params[3]);
-                local tween,err = pcall(function()
-                local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
-                tween:Play();
-            end)
-        if not tween then return err end
-        end
-    tp(-2261, 31, -1559);
-    wait(6)
-    workspace.ObjectSelection.TakeJetpack.TakeJetpack.TakeJetpack.Event:FireServer()
-    wait(1)
-    tp(200, 100, 200);
-end)
-
-MiscSection:NewButton("Get Keycard", "Gets you Keycard", function()  
-for i = 1,50 do
-    for i,v in pairs(game.Players:GetChildren()) do
-        local args = {
-    [1] = "Pickpocket",
-    [2] = v
-}    
-    game:GetService("ReplicatedStorage").Event:FireServer(unpack(args))
-        end
-    end
-end)   
-
-
 
 
 
@@ -1763,11 +754,17 @@ game.Players.PlayerAdded:Connect(function(newplr)
     end)
 end)
 
+EspSection:NewButton("Chams", "Looks nice", function()
+    _G.FriendColor = Color3.fromRGB(0, 255, 0)
+    _G.EnemyColor = Color3.fromRGB(255, 0, 0)
+    _G.UseTeamColor = true
+    
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/zeroisswag/universal-esp/main/esp.lua"))()
+end)
+
 
 
 EspSection:NewButton("2D Box Esp", "why", function()
-    -- Preview: https://cdn.discordapp.com/attachments/796378086446333984/818089455897542687/unknown.png
--- Made by Blissful#4992
 local Settings = {
     Box_Color = Color3.fromRGB(255, 0, 0),
     Tracer_Color = Color3.fromRGB(255, 0, 0),
@@ -2695,82 +1692,22 @@ end)
 
 
 
-    PlayerSection:NewSlider("Walkspeed", "Changes the walkspeed", 250, 16, function(v)   
-        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+    PlayerSection:NewSlider("Walkspeed", "Changes the walkspeed", 250, 16, function(v)  
+        getgenv().WalkSpeedValue = v;
+        local Player = game:service'Players'.LocalPlayer;
+        Player.Character.Humanoid:GetPropertyChangedSignal'WalkSpeed':Connect(function()
+        Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+        end)
+        Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
     end)
 
-
-
-    PlayerSection:NewToggle("Walk on Water", "", function(ddq)
-        getgenv().trin4nets = ddq
-        if getgenv().trin4nets then
-        for k,v in pairs(game:GetService("Workspace").Water:GetChildren()) do
-           v.CanCollide = true
-           v.Anchored = true
-           v.Material = "Ice"
-        end
-        else
-            for k,v in pairs(game:GetService("Workspace").Water:GetChildren()) do
-        v.CanCollide = false
-           v.Anchored = false
-           v.Material = "Ice"
-        end
-        end
+    PlayerSection:NewSlider("JumpPower", "Changes the JumpPower", 250, 50, function(g)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = g
     end)
 
- 
-    PlayerSection:NewSlider("Jumppower", "Changes the jumppower", 250, 50, function(v)
-        game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+    PlayerSection:NewSlider("Gavity", "Changes the Gavity", 250, -20, function(v)
+        game.Workspace.Gravity = v
     end)
-
-    PlayerSection:NewButton("Black Skin", "Kills you", function()
-            for i = 1,3 do
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-326, 142, -2869)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-326, 142, -2869)
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1203.02539, 51058.3906, 552.828857, 0, -1, 0, 1, 0, -0, 0, 0, 1)
-                wait(1)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1203.02539, 51058.3906, 533.490723, 0, -1, 0, 1, 0, -0, 0, 0, 1)
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1203.02539, 51058.3906, 552.828857, 0, -1, 0, 1, 0, -0, 0, 0, 1)
-        end
-    end)
-
-
-    PlayerSection:NewToggle("God mode Yourself", "not made by me xD", function(cwe)
-        getgenv().trggewinkets = cwe
-        while wait() do
-        if getgenv().trggewinkets then
-            pcall(function()
-                   local A_1 = "RevivePlayer"
-                   local A_2 = game:GetService("Workspace")[game.Players.LocalPlayer.Name]
-                   local A_3 = game:GetService("Workspace").ObjectSelection.DownedPart.DownedPart
-                   local Event = game:GetService("ReplicatedStorage").Event
-                   Event:FireServer(A_1, A_2, A_3)
-                end)
-            end
-        end
-    end)
-
-
-    
-    PlayerSection:NewToggle("God mode Whole Server", "not made by me xD", function(cwe)
-        getgenv().trggbhewinkets = cqwtrt
-            while wait() do
-                if getgenv().trggbhewinkets then
-                for i,ve in pairs(game.Players:GetPlayers()) do
-                pcall(function()
-                        local A_1 = "RevivePlayer"
-                        local A_2 = game:GetService("Workspace")[ve.Name]
-                        local A_3 = game:GetService("Workspace").ObjectSelection.DownedPart.DownedPart
-                        local Event = game:GetService("ReplicatedStorage").Event
-                        Event:FireServer(A_1, A_2, A_3)
-                    end)
-                end
-            end
-        end
-    end)
-
-
-
 
     PlayerSection:NewButton("Respawn", "Kills you", function()
         game.Players.LocalPlayer.Character.Head:Remove()
@@ -2778,13 +1715,15 @@ end)
 
 
     PlayerSection:NewButton("Infinite Jump", "", function()  
-            local InfiniteJumpEnabled = true
-            game:GetService("UserInputService").JumpRequest:connect(function()
+        local InfiniteJumpEnabled = true
+        game:GetService("UserInputService").JumpRequest:connect(function()
             if InfiniteJumpEnabled then
                 game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
             end
         end)
     end)
+
+
 
     PlayerSection:NewButton("Rejoin", "Rejoin the same server", function()  
         game:GetService("TeleportService"):Teleport(game.PlaceId)
@@ -2797,78 +1736,6 @@ end)
 
 
 
-    --Admin / Trolling
-
-
-    local More = Window:NewTab("Admin / Trolling Stuff")
-    local MoreSection = More:NewSection("Main")
-
-
-
-    MoreSection:NewButton("Give all Glider", "", function()
-        for i,v in pairs(game.Players:GetChildren()) do
-            local args = {
-                [1] = "Glider",
-                [2] = v.Character.Parachute.Handle,
-                [3] = -math.huge
-            }
-            game:GetService("ReplicatedStorage").Event:FireServer(unpack(args))
-        end
-    end)
-
-    MoreSection:NewButton("Remove all Glider", "", function()
-        for i,v in pairs(game.Players:GetChildren()) do
-            local args = {
-                [1] = "Glider",
-                [2] = v.Character.Parachute.Handle,
-                [3] = math.huge
-            }
-            game:GetService("ReplicatedStorage").Event:FireServer(unpack(args))
-        end
-    end)
-
-    
-    MoreSection:NewButton("Spam all car Horns", "", function()
-        for i,v in pairs(game.Workspace.ObjectSelection:GetDescendants()) do
-            if v:IsA("Sound") then 
-            v:Play()
-            end
-        end
-    end)
-
-
-
-
-
-
-    MoreSection:NewButton("Crash Server", "you get kick if it works", function()
-        if game.Players.LocalPlayer.Backpack:FindFirstChild("Shotgun") == nil then
-            game:GetService("StarterGui"):SetCore("SendNotification",{     
-            Title = "Attention",     
-            Text = "You need equip Shotgun to Server Crash Work",
-            Duration = 7, })
-                else
-                    local plr = game.Players.LocalPlayer
-                    local char = plr.Character
-        
-                    for i = 1, 20 do
-                    wait()
-                    workspace.ObjectSelection.Shotgun.Shotgun.Shotgun.Event:FireServer()
-                end
-            char.Humanoid:EquipTool(plr.Backpack.Shotgun)
-            for i = 1, 8000 do
-            game:GetService("ReplicatedStorage").Event:FireServer("ShootShotgun", workspace[plr.Name], Vector3.new(0, 0, 0), "Shotgun", "inf", "inf", "inf")
-            end
-                   game:GetService("StarterGui"):SetCore("SendNotification",{     
-            Title = "Crash Server Script",     
-            Text = "Server Has Been Crashed",
-            Duration = 7, })
-        end
-    end)
-
-
-
-
 
 
 
@@ -2877,7 +1744,10 @@ end)
     local Guis = Window:NewTab("Other Guis")
     local GuisSection = Guis:NewSection("Guis")
 
- 
+    GuisSection:NewButton("Auto Rob (key)", "Made by SYL#0011", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/devpulco/tr1vvvv/main/README.md",true))()
+    end)
+
     GuisSection:NewButton("TR1V5", "A Good Gui (with Auto Farm)", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/devpulco/tr1vvvv/main/README.md",true))()
     end)
