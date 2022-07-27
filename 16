@@ -1,7 +1,4 @@
-        StarterGui:SetCore("SendNotification", {
-            Title = "System";
-            Text = "PLEASE WAIT!"
-        })
+
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = 540
         game.Players.LocalPlayer.Character.Humanoid.Jump = true
         for i = 1, 5 do
@@ -9,10 +6,6 @@
             wait(2)
             S:Sit(game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"))
         end
-        StarterGui:SetCore("SendNotification", {
-            Title = "System";
-            Text = "Ready!"
-        })
         game:GetService("Workspace"):FindFirstChild("Vehicles").ChildAdded:Connect(function(obj)
             print(obj.Name)
             if C == true then
