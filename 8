@@ -1,0 +1,42 @@
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "_Neko#4061";
+        Text = "Teleport Started Plese Wait!";
+        Icon = "rbxassetid://10356725366";
+        Duration = 10;
+        })
+    local _speed=600
+    function tp(...)
+       local plr=game.Players.LocalPlayer
+       local args={...}
+       if typeof(args[1])=="number"and args[2]and args[3]then
+          args=Vector3.new(args[1],args[2],args[3])
+       elseif typeof(args[1])=="Vector3" then
+           args=args[1]    
+       elseif typeof(args[1])=="CFrame" then
+           args=args[1].Position
+       end
+       local dist=(plr.Character.HumanoidRootPart.Position-args).Magnitude
+       game:GetService("TweenService"):Create(
+           plr.Character.HumanoidRootPart,
+           TweenInfo.new(dist/_speed,Enum.EasingStyle.Linear),
+           {CFrame=CFrame.new(args)}
+       ):Play()
+    end
+    
+  game.Players.LocalPlayer.Character.Humanoid.JumpPower = 500
+  game.Players.LocalPlayer.Character.Humanoid.Jump = true
+    
+    wait(3)
+    
+    tp(1694 , 750 , -1229)
+    
+    wait(9)
+    
+    tp(1694 , 74 , -1229)
+    wait(1.2)
+    game.StarterGui:SetCore("SendNotification", {
+    Title = "_Neko#4061";
+    Text = "Teleport Finished";
+    Icon = "rbxassetid://10356725366";
+    Duration = 5;
+    })
