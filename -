@@ -86,7 +86,9 @@ TpsSection:NewButton("Pirate island", "Thx to pascaldercoole1#6129 for help", fu
 end)
 
 
-
+TpsSection:NewButton("Airport", "Thx to pascaldercoole1#6129 for help", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/12"))();
+end)
 
 
 
