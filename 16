@@ -1,0 +1,27 @@
+        StarterGui:SetCore("SendNotification", {
+            Title = "System";
+            Text = "PLEASE WAIT!"
+        })
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 540
+        game.Players.LocalPlayer.Character.Humanoid.Jump = true
+        for i = 1, 5 do
+            local S = game:GetService("Workspace"):FindFirstChild("Vehicles"):FindFirstChild("Car_"..game.Players.LocalPlayer.Name):FindFirstChild("PassengerSeat")
+            wait(2)
+            S:Sit(game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"))
+        end
+        StarterGui:SetCore("SendNotification", {
+            Title = "System";
+            Text = "Ready!"
+        })
+    end)
+
+    game:GetService("Workspace"):FindFirstChild("Vehicles").ChildAdded:Connect(function(obj)
+        print(obj.Name)
+        if C == true then
+            if obj.Name == A_3 then 
+            C = false
+            obj.Name = "Car_"..game.Players.LocalPlayer.Name
+            else
+            print("falsch")
+            end
+        end   
