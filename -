@@ -91,6 +91,18 @@ TpsSection:NewButton("Airport", "Thx to pascaldercoole1#6129 for help", function
 end)
 
 
+TpsSection:NewButton("Prison in", "Thx to pascaldercoole1#6129 for help", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/13"))();
+end)
+
+
+TpsSection:NewButton("Port", "Thx to pascaldercoole1#6129 for help", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/14"))();
+end)
+
+
+
+
 
     -- Silent aim
     local Weapon = Window:NewTab("Silent aim")
