@@ -1745,7 +1745,7 @@ end)
     local GuisSection = Guis:NewSection("Guis")
 
     GuisSection:NewButton("Auto Rob (key)", "Made by SYL#0011", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/devpulco/tr1vvvv/main/README.md",true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ECLIPSEXHUB/ECLIPSE-X/main/ROB.lua"))()
     end)
 
     GuisSection:NewButton("TR1V5", "A Good Gui (with Auto Farm)", function()
