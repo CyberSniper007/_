@@ -13,15 +13,14 @@
             Title = "System";
             Text = "Ready!"
         })
-    end)
-
-    game:GetService("Workspace"):FindFirstChild("Vehicles").ChildAdded:Connect(function(obj)
-        print(obj.Name)
-        if C == true then
-            if obj.Name == A_3 then 
-            C = false
-            obj.Name = "Car_"..game.Players.LocalPlayer.Name
-            else
-            print("falsch")
-            end
-        end   
+        game:GetService("Workspace"):FindFirstChild("Vehicles").ChildAdded:Connect(function(obj)
+            print(obj.Name)
+            if C == true then
+                if obj.Name == A_3 then 
+                C = false
+                obj.Name = "Car_"..game.Players.LocalPlayer.Name
+                else
+                print("falsch")
+                end
+            end   
+        end)
