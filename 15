@@ -1,5 +1,2 @@
-        local A_1 = "UI"
-        local A_2 = "SpawnCar"
-        local A_3 = "Nero"
-        local Event = game:GetService("ReplicatedStorage").Remote.RemoteFunction
-        Event:InvokeServer(A_1, A_2, A_3)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 540
+        game.Players.LocalPlayer.Character.Humanoid.Jump = true
