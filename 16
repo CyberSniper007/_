@@ -1,2 +1,0 @@
-        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 540
-        game.Players.LocalPlayer.Character.Humanoid.Jump = true
