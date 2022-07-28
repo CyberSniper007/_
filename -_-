@@ -1,0 +1,2897 @@
+--  Owner Gui
+
+if game.PlaceId == 1224212277 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Mad City Gui By Neko#4061 (Full version)", "BloodTheme")
+
+   -- Mad City
+
+
+
+
+   local Owner = Window:NewTab("Unleaked Scripts")
+   local OwnerSection = Owner:NewSection("Main")
+
+
+
+   OwnerSection:NewButton("Cobra killaura (Crims)", "By pascaldercoole1#6129", function()
+    local PLAYERS                                      =              game:GetService("Players")
+    local PLAYERCHILDREN                              =              game:GetService("Players"):GetChildren()
+    for i = 1, #PLAYERCHILDREN do
+        if PLAYERCHILDREN[i].Team == game:GetService("Teams"):FindFirstChild("Criminals") then
+            wait(math.random(0.1, 4))
+            local H = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").SeatPart.Parent
+            local S = H:FindFirstChild("DriveSeat").CFrame
+            local A_1 = "VehicleFireRocketPods"
+            local A_2 = H.Body.RocketPod
+            local A_3 = game.Players:FindFirstChild(PLAYERCHILDREN[i].Name).Character:FindFirstChild("HumanoidRootPart").Position
+            print(A_3)
+            local Event = game:GetService("ReplicatedStorage").Remote.RemoteEvent
+            Event:FireServer(A_1, A_2, A_3)
+                end
+            end
+        end)
+
+        OwnerSection:NewButton("Cobra killaura (Villains)", "By pascaldercoole1#6129", function()
+            local PLAYERS                                      =              game:GetService("Players")
+            local PLAYERCHILDREN                              =              game:GetService("Players"):GetChildren()
+            for i = 1, #PLAYERCHILDREN do
+                if PLAYERCHILDREN[i].Team == game:GetService("Teams"):FindFirstChild("Villains") then
+                    wait(math.random(0.1, 4))
+                    local H = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").SeatPart.Parent
+                    local S = H:FindFirstChild("DriveSeat").CFrame
+                    local A_1 = "VehicleFireRocketPods"
+                    local A_2 = H.Body.RocketPod
+                    local A_3 = game.Players:FindFirstChild(PLAYERCHILDREN[i].Name).Character:FindFirstChild("HumanoidRootPart").Position
+                    print(A_3)
+                    local Event = game:GetService("ReplicatedStorage").Remote.RemoteEvent
+                    Event:FireServer(A_1, A_2, A_3)
+                        end
+                    end
+                end)
+
+
+
+
+
+
+    OwnerSection:NewDropdown("Car Spawner", "DropdownInf", {"Nero", "Camaro", "Light Bike" , "Overdrive" , "Roadster" , "Thunderbird" , "Tracer" , "Hyper Glider" , "Night Rider"}, function(currentOption)
+        local A_1 = "UI"
+        local A_2 = "SpawnCar"
+        local A_3 = currentOption
+        local Event = game:GetService("ReplicatedStorage").Remote.RemoteFunction
+        Event:InvokeServer(A_1, A_2, A_3)
+    end)
+
+
+    OwnerSection:NewButton("Car Teleport", "By pascaldercoole1#6129", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/_"))()
+    end)
+
+
+    OwnerSection:NewDropdown("Plane Spawner", "", {"Nighthawk", "Warhawk", "Falcon" , "Cobra" , "Archangel" , "Buzzard" , "Scout"}, function(currentOption)
+        game.StarterGui:SetCore("SendNotification", {
+            Title = "_Neko#4061";
+            Text = "Only works if you near a spawn pad";
+            Icon = "rbxassetid://10356725366";
+            Duration = 5;
+            })
+        local A_1 = "AirVehiclePadSpawnAirVehicle"
+        local A_2 = currentOption
+        local A_3 = game:GetService("Workspace").VehicleSpawners.PlaneVehicleSpawners.Pad
+        local Event = game:GetService("ReplicatedStorage").Remote.RemoteEvent
+        Event:FireServer(A_1, A_2, A_3)
+
+        local A_1 = "AirVehiclePadSpawnAirVehicle"
+        local A_2 = currentOption
+        local A_3 = game:GetService("Workspace").VehicleSpawners.HeliVehicleSpawners.Pad
+        local Event = game:GetService("ReplicatedStorage").Remote.RemoteEvent
+        Event:FireServer(A_1, A_2, A_3)
+
+        wait(2.5)
+
+        for i = 1, 100 do
+            local S = game:GetService("Workspace"):FindFirstChild("Vehicles"):FindFirstChild(currentOption).DriveSeat
+        S:Sit(game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"))
+        end
+    end)
+
+
+
+
+    OwnerSection:NewButton("Hide Name", "By pascaldercoole1#6129", function()
+        game:GetService("Workspace").CheaterPascal.HumanoidRootPart.PlayerNameplate:Destroy()
+    end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    -- Main
+
+
+    local Main = Window:NewTab("Scripts")
+    local MainSection = Main:NewSection("Main")
+
+
+
+    MainSection:NewButton("Aimbot", "Helps your Aim", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SoldoxD/SoldoxD/main/Aimbot"))();
+    end)
+
+
+
+
+    --Teleport/Robs
+    local Tp = Window:NewTab("Teleport")
+    local TpsSection = Tp:NewSection("Only Works if nothing is above you")
+
+    TpsSection:NewButton("Crimbase", "Thx to pascaldercoole1#6129 for help", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/1"))();
+    end)
+
+
+    TpsSection:NewButton("Gun store", "Thx to pascaldercoole1#6129 for help", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/2"))();
+end)
+
+
+TpsSection:NewButton("Casino", "Thx to pascaldercoole1#6129 for help", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/3"))();
+end)
+
+
+TpsSection:NewButton("Club", "Thx to pascaldercoole1#6129 for help", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/4"))();
+end)
+
+
+
+
+TpsSection:NewButton("Police Station", "Thx to pascaldercoole1#6129 for help", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/5"))();
+end)
+
+
+
+TpsSection:NewButton("Bank", "Thx to pascaldercoole1#6129 for help", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/6"))();
+end)
+
+
+
+TpsSection:NewButton("Diamond", "Thx to pascaldercoole1#6129 for help", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/7"))();
+end)
+
+
+
+TpsSection:NewButton("Club", "Thx to pascaldercoole1#6129 for help", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/8"))();
+end)
+
+
+
+TpsSection:NewButton("Military base", "Thx to pascaldercoole1#6129 for help", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/9"))();
+end)
+
+
+
+TpsSection:NewButton("Small City", "Thx to pascaldercoole1#6129 for help", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/10"))();
+end)
+
+
+
+TpsSection:NewButton("Pirate island", "Thx to pascaldercoole1#6129 for help", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/11"))();
+end)
+
+
+TpsSection:NewButton("Airport", "Thx to pascaldercoole1#6129 for help", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/12"))();
+end)
+
+
+TpsSection:NewButton("Prison in", "Thx to pascaldercoole1#6129 for help", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/13"))();
+end)
+
+
+TpsSection:NewButton("Port", "Thx to pascaldercoole1#6129 for help", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberSniper007/_/main/14"))();
+end)
+
+
+
+
+
+    -- Silent aim
+    local Weapon = Window:NewTab("Silent aim")
+    local WeaponSection = Weapon:NewSection("Silent aim / Wallbang")
+
+    WeaponSection:NewButton("Silent Aim", "Original by Cesare", function()
+            
+        local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+
+        local PhantomForcesWindow = Library:NewWindow("Aim by _Neko#4061")
+
+        local Silent = PhantomForcesWindow:NewSection("Silent Aim")
+
+
+        Silent:CreateSlider("Fov", 25, 800, 260, false, function(value)
+            getgenv().fov = value
+        end)
+
+
+        Silent:CreateDropdown("DropDown", {"Head", "Torso"}, 2, function(X)
+            getgenv().bodypart = X
+        end)
+
+
+        Silent:CreateButton("Silent Aim", function()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Cesare0328/my-scripts/main/SAMCH2', true))()
+        end)
+    end)
+
+
+
+
+    -- ESP
+    local Esp = Window:NewTab("Esp")
+    local EspSection = Esp:NewSection("Main")
+
+    EspSection:NewButton("Name Esp", "why", function()
+local ESP = {
+    Enabled = true,
+    Boxes = false,
+    BoxShift = CFrame.new(0,-1.5,0),
+	BoxSize = Vector3.new(4,6,0),
+    Color = Color3.fromRGB(255, 170, 0),
+    FaceCamera = false,
+    Names = true,
+    TeamColor = true,
+    Thickness = 2,
+    AttachShift = 1,
+    TeamMates = true,
+    Players = true,
+    
+    Objects = setmetatable({}, {__mode="kv"}),
+    Overrides = {}
+}
+local cam = workspace.CurrentCamera
+local plrs = game:GetService("Players")
+local plr = plrs.LocalPlayer
+local mouse = plr:GetMouse()
+
+local V3new = Vector3.new
+local WorldToViewportPoint = cam.WorldToViewportPoint
+local function Draw(obj, props)
+	local new = Drawing.new(obj)
+	
+	props = props or {}
+	for i,v in pairs(props) do
+		new[i] = v
+	end
+	return new
+end
+
+function ESP:GetTeam(p)
+	local ov = self.Overrides.GetTeam
+	if ov then
+		return ov(p)
+	end
+	
+	return p and p.Team
+end
+
+function ESP:IsTeamMate(p)
+    local ov = self.Overrides.IsTeamMate
+	if ov then
+		return ov(p)
+    end
+    
+    return self:GetTeam(p) == self:GetTeam(plr)
+end
+
+function ESP:GetColor(obj)
+	local ov = self.Overrides.GetColor
+	if ov then
+		return ov(obj)
+    end
+    local p = self:GetPlrFromChar(obj)
+	return p and self.TeamColor and p.Team and p.Team.TeamColor.Color or self.Color
+end
+
+function ESP:GetPlrFromChar(char)
+	local ov = self.Overrides.GetPlrFromChar
+	if ov then
+		return ov(char)
+	end
+	
+	return plrs:GetPlayerFromCharacter(char)
+end
+
+function ESP:Toggle(bool)
+    self.Enabled = bool
+    if not bool then
+        for i,v in pairs(self.Objects) do
+            if v.Type == "Box" then --fov circle etc
+                if v.Temporary then
+                    v:Remove()
+                else
+                    for i,v in pairs(v.Components) do
+                        v.Visible = false
+                    end
+                end
+            end
+        end
+    end
+end
+
+function ESP:GetBox(obj)
+    return self.Objects[obj]
+end
+
+function ESP:AddObjectListener(parent, options)
+    local function NewListener(c)
+        if type(options.Type) == "string" and c:IsA(options.Type) or options.Type == nil then
+            if type(options.Name) == "string" and c.Name == options.Name or options.Name == nil then
+                if not options.Validator or options.Validator(c) then
+                    local box = ESP:Add(c, {
+                        PrimaryPart = type(options.PrimaryPart) == "string" and c:WaitForChild(options.PrimaryPart) or type(options.PrimaryPart) == "function" and options.PrimaryPart(c),
+                        Color = type(options.Color) == "function" and options.Color(c) or options.Color,
+                        ColorDynamic = options.ColorDynamic,
+                        Name = type(options.CustomName) == "function" and options.CustomName(c) or options.CustomName,
+                        IsEnabled = options.IsEnabled,
+                        RenderInNil = options.RenderInNil
+                    })
+                    --TODO: add a better way of passing options
+                    if options.OnAdded then
+                        coroutine.wrap(options.OnAdded)(box)
+                    end
+                end
+            end
+        end
+    end
+
+    if options.Recursive then
+        parent.DescendantAdded:Connect(NewListener)
+        for i,v in pairs(parent:GetDescendants()) do
+            coroutine.wrap(NewListener)(v)
+        end
+    else
+        parent.ChildAdded:Connect(NewListener)
+        for i,v in pairs(parent:GetChildren()) do
+            coroutine.wrap(NewListener)(v)
+        end
+    end
+end
+
+local boxBase = {}
+boxBase.__index = boxBase
+
+function boxBase:Remove()
+    ESP.Objects[self.Object] = nil
+    for i,v in pairs(self.Components) do
+        v.Visible = false
+        v:Remove()
+        self.Components[i] = nil
+    end
+end
+
+function boxBase:Update()
+    if not self.PrimaryPart then
+        --warn("not supposed to print", self.Object)
+        return self:Remove()
+    end
+
+    local color
+    if ESP.Highlighted == self.Object then
+       color = ESP.HighlightColor
+    else
+        color = self.Color or self.ColorDynamic and self:ColorDynamic() or ESP:GetColor(self.Object) or ESP.Color
+    end
+
+    local allow = true
+    if ESP.Overrides.UpdateAllow and not ESP.Overrides.UpdateAllow(self) then
+        allow = false
+    end
+    if self.Player and not ESP.TeamMates and ESP:IsTeamMate(self.Player) then
+        allow = false
+    end
+    if self.Player and not ESP.Players then
+        allow = false
+    end
+    if self.IsEnabled and (type(self.IsEnabled) == "string" and not ESP[self.IsEnabled] or type(self.IsEnabled) == "function" and not self:IsEnabled()) then
+        allow = false
+    end
+    if not workspace:IsAncestorOf(self.PrimaryPart) and not self.RenderInNil then
+        allow = false
+    end
+
+    if not allow then
+        for i,v in pairs(self.Components) do
+            v.Visible = false
+        end
+        return
+    end
+
+    if ESP.Highlighted == self.Object then
+        color = ESP.HighlightColor
+    end
+
+    local cf = self.PrimaryPart.CFrame
+    if ESP.FaceCamera then
+        cf = CFrame.new(cf.p, cam.CFrame.p)
+    end
+    local size = self.Size
+    local locs = {
+        TopLeft = cf * ESP.BoxShift * CFrame.new(size.X/2,size.Y/2,0),
+        TopRight = cf * ESP.BoxShift * CFrame.new(-size.X/2,size.Y/2,0),
+        BottomLeft = cf * ESP.BoxShift * CFrame.new(size.X/2,-size.Y/2,0),
+        BottomRight = cf * ESP.BoxShift * CFrame.new(-size.X/2,-size.Y/2,0),
+        TagPos = cf * ESP.BoxShift * CFrame.new(0,size.Y/2,0),
+        Torso = cf * ESP.BoxShift
+    }
+
+    if ESP.Boxes then
+        local TopLeft, Vis1 = WorldToViewportPoint(cam, locs.TopLeft.p)
+        local TopRight, Vis2 = WorldToViewportPoint(cam, locs.TopRight.p)
+        local BottomLeft, Vis3 = WorldToViewportPoint(cam, locs.BottomLeft.p)
+        local BottomRight, Vis4 = WorldToViewportPoint(cam, locs.BottomRight.p)
+
+        if self.Components.Quad then
+            if Vis1 or Vis2 or Vis3 or Vis4 then
+                self.Components.Quad.Visible = true
+                self.Components.Quad.PointA = Vector2.new(TopRight.X, TopRight.Y)
+                self.Components.Quad.PointB = Vector2.new(TopLeft.X, TopLeft.Y)
+                self.Components.Quad.PointC = Vector2.new(BottomLeft.X, BottomLeft.Y)
+                self.Components.Quad.PointD = Vector2.new(BottomRight.X, BottomRight.Y)
+                self.Components.Quad.Color = color
+            else
+                self.Components.Quad.Visible = false
+            end
+        end
+    else
+        self.Components.Quad.Visible = false
+    end
+
+    if ESP.Names then
+        local TagPos, Vis5 = WorldToViewportPoint(cam, locs.TagPos.p)
+        
+        if Vis5 then
+            self.Components.Name.Visible = true
+            self.Components.Name.Position = Vector2.new(TagPos.X, TagPos.Y)
+            self.Components.Name.Text = self.Name
+            self.Components.Name.Color = color
+            
+            self.Components.Distance.Visible = true
+            self.Components.Distance.Position = Vector2.new(TagPos.X, TagPos.Y + 14)
+            self.Components.Distance.Text = math.floor((cam.CFrame.p - cf.p).magnitude) .."m away"
+            self.Components.Distance.Color = color
+        else
+            self.Components.Name.Visible = false
+            self.Components.Distance.Visible = false
+        end
+    else
+        self.Components.Name.Visible = false
+        self.Components.Distance.Visible = false
+    end
+    
+    if ESP.Tracers then
+        local TorsoPos, Vis6 = WorldToViewportPoint(cam, locs.Torso.p)
+
+        if Vis6 then
+            self.Components.Tracer.Visible = true
+            self.Components.Tracer.From = Vector2.new(TorsoPos.X, TorsoPos.Y)
+            self.Components.Tracer.To = Vector2.new(cam.ViewportSize.X/2,cam.ViewportSize.Y/ESP.AttachShift)
+            self.Components.Tracer.Color = color
+        else
+            self.Components.Tracer.Visible = false
+        end
+    else
+        self.Components.Tracer.Visible = false
+    end
+end
+
+function ESP:Add(obj, options)
+    if not obj.Parent and not options.RenderInNil then
+        return warn(obj, "has no parent")
+    end
+
+    local box = setmetatable({
+        Name = options.Name or obj.Name,
+        Type = "Box",
+        Color = options.Color --[[or self:GetColor(obj)]],
+        Size = options.Size or self.BoxSize,
+        Object = obj,
+        Player = options.Player or plrs:GetPlayerFromCharacter(obj),
+        PrimaryPart = options.PrimaryPart or obj.ClassName == "Model" and (obj.PrimaryPart or obj:FindFirstChild("HumanoidRootPart") or obj:FindFirstChildWhichIsA("BasePart")) or obj:IsA("BasePart") and obj,
+        Components = {},
+        IsEnabled = options.IsEnabled,
+        Temporary = options.Temporary,
+        ColorDynamic = options.ColorDynamic,
+        RenderInNil = options.RenderInNil
+    }, boxBase)
+
+    if self:GetBox(obj) then
+        self:GetBox(obj):Remove()
+    end
+
+    box.Components["Quad"] = Draw("Quad", {
+        Thickness = self.Thickness,
+        Color = color,
+        Transparency = 1,
+        Filled = false,
+        Visible = self.Enabled and self.Boxes
+    })
+    box.Components["Name"] = Draw("Text", {
+		Text = box.Name,
+		Color = box.Color,
+		Center = true,
+		Outline = true,
+        Size = 19,
+        Visible = self.Enabled and self.Names
+	})
+	box.Components["Distance"] = Draw("Text", {
+		Color = box.Color,
+		Center = true,
+		Outline = true,
+        Size = 19,
+        Visible = self.Enabled and self.Names
+	})
+	
+	box.Components["Tracer"] = Draw("Line", {
+		Thickness = ESP.Thickness,
+		Color = box.Color,
+        Transparency = 1,
+        Visible = self.Enabled and self.Tracers
+    })
+    self.Objects[obj] = box
+    
+    obj.AncestryChanged:Connect(function(_, parent)
+        if parent == nil and ESP.AutoRemove ~= false then
+            box:Remove()
+        end
+    end)
+    obj:GetPropertyChangedSignal("Parent"):Connect(function()
+        if obj.Parent == nil and ESP.AutoRemove ~= false then
+            box:Remove()
+        end
+    end)
+
+    local hum = obj:FindFirstChildOfClass("Humanoid")
+	if hum then
+        hum.Died:Connect(function()
+            if ESP.AutoRemove ~= false then
+                box:Remove()
+            end
+		end)
+    end
+
+    return box
+end
+
+local function CharAdded(char)
+    local p = plrs:GetPlayerFromCharacter(char)
+    if not char:FindFirstChild("HumanoidRootPart") then
+        local ev
+        ev = char.ChildAdded:Connect(function(c)
+            if c.Name == "HumanoidRootPart" then
+                ev:Disconnect()
+                ESP:Add(char, {
+                    Name = p.Name,
+                    Player = p,
+                    PrimaryPart = c
+                })
+            end
+        end)
+    else
+        ESP:Add(char, {
+            Name = p.Name,
+            Player = p,
+            PrimaryPart = char.HumanoidRootPart
+        })
+    end
+end
+local function PlayerAdded(p)
+    p.CharacterAdded:Connect(CharAdded)
+    if p.Character then
+        coroutine.wrap(CharAdded)(p.Character)
+    end
+end
+plrs.PlayerAdded:Connect(PlayerAdded)
+for i,v in pairs(plrs:GetPlayers()) do
+    if v ~= plr then
+        PlayerAdded(v)
+    end
+end
+
+game:GetService("RunService").RenderStepped:Connect(function()
+    cam = workspace.CurrentCamera
+    for i,v in (ESP.Enabled and pairs or ipairs)(ESP.Objects) do
+        if v.Update then
+            local s,e = pcall(v.Update, v)
+            if not s then warn("[EU]", e, v.Object:GetFullName()) end
+        end
+    end
+end)
+
+return ESP
+end)
+
+
+
+    EspSection:NewButton("Tracers", "why", function()
+--// Locals:
+local workspace = game:GetService("Workspace")
+local player = game:GetService("Players").LocalPlayer
+local camera = workspace.CurrentCamera
+
+--// Settings:
+local on = true -- Use this if your making gui
+
+
+local Tracers = true
+local Tracer_Color = Color3.fromRGB(255, 0, 0)
+local Tracer_Thickness = 2
+local Tracer_Transparency = 1 -- 1 Visible, 0 Not Visible
+
+local Autothickness = true -- Makes screen less encumbered
+
+local Team_Check = true
+local red = Color3.fromRGB(227, 52, 52)
+local green = Color3.fromRGB(88, 217, 24)
+
+--// Main Function:
+for i, v in pairs(game.Players:GetChildren()) do
+    --// Lines for 3D box (12)
+
+    
+    local Tracer = Drawing.new("Line")
+    Tracer.Visible = false
+    Tracer.Color = Tracer_Color
+    Tracer.Thickness = Tracer_Thickness
+    Tracer.Transparency = Tracer_Transparency
+
+    --// Updates ESP (lines) in render loop
+    local function ESP()
+        local connection
+        connection = game:GetService("RunService").RenderStepped:Connect(function()
+            if on and v.Character ~= nil and v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil and v.Name ~= player.Name  and v.Character.Humanoid.Health > 0 then
+                local pos, vis = camera:WorldToViewportPoint(v.Character.HumanoidRootPart.Position)
+                if vis then
+                    local Scale = v.Character.Head.Size.Y/2
+                    local Size = Vector3.new(2, 3, 1.5) * (Scale * 2) -- Change this for different box size
+
+                    local Top1 = camera:WorldToViewportPoint((v.Character.HumanoidRootPart.CFrame * CFrame.new(-Size.X, Size.Y, -Size.Z)).p)
+                    local Top2 = camera:WorldToViewportPoint((v.Character.HumanoidRootPart.CFrame * CFrame.new(-Size.X, Size.Y, Size.Z)).p)
+                    local Top3 = camera:WorldToViewportPoint((v.Character.HumanoidRootPart.CFrame * CFrame.new(Size.X, Size.Y, Size.Z)).p)
+                    local Top4 = camera:WorldToViewportPoint((v.Character.HumanoidRootPart.CFrame * CFrame.new(Size.X, Size.Y, -Size.Z)).p)
+
+                    local Bottom1 = camera:WorldToViewportPoint((v.Character.HumanoidRootPart.CFrame * CFrame.new(-Size.X, -Size.Y, -Size.Z)).p)
+                    local Bottom2 = camera:WorldToViewportPoint((v.Character.HumanoidRootPart.CFrame * CFrame.new(-Size.X, -Size.Y, Size.Z)).p)
+                    local Bottom3 = camera:WorldToViewportPoint((v.Character.HumanoidRootPart.CFrame * CFrame.new(Size.X, -Size.Y, Size.Z)).p)
+                    local Bottom4 = camera:WorldToViewportPoint((v.Character.HumanoidRootPart.CFrame * CFrame.new(Size.X, -Size.Y, -Size.Z)).p)
+
+ 
+                    --// Tracer:
+                    if Tracers then
+                        local trace = camera:WorldToViewportPoint((v.Character.HumanoidRootPart.CFrame * CFrame.new(0, -Size.Y, 0)).p)
+
+                        Tracer.From = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y)
+                        Tracer.To = Vector2.new(trace.X, trace.Y)
+                    end
+
+                    --// Teamcheck:
+                    if Team_Check then
+                        if v.TeamColor == player.TeamColor then
+                            Tracer.Color = green
+                        else 
+                            Tracer.Color = red
+                        end
+                    end
+
+                    --// Autothickness:
+                    if Autothickness then
+                        local distance = (player.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).magnitude
+                        local value = math.clamp(1/distance*100, 0.1, 4) --0.1 is min thickness, 6 is max
+                    end
+                    if Tracers then
+                        Tracer.Visible = true
+                    end
+                else 
+                    Tracer.Visible = false
+                end
+            else 
+                Tracer.Visible = false
+                if game.Players:FindFirstChild(v.Name) == nil then
+                    connection:Disconnect()
+                end
+            end
+        end)
+    end
+    coroutine.wrap(ESP)()
+end
+
+game.Players.PlayerAdded:Connect(function(newplr)
+
+    local Tracer = Drawing.new("Line")
+    Tracer.Visible = false
+    Tracer.Color = Tracer_Color
+    Tracer.Thickness = Tracer_Thickness
+    Tracer.Transparency = Tracer_Transparency
+
+    --// Updates ESP (lines) in render loop
+    local function ESP()
+        local connection
+        connection = game:GetService("RunService").RenderStepped:Connect(function()
+            if on and newplr.Character ~= nil and newplr.Character:FindFirstChild("Humanoid") ~= nil and newplr.Character:FindFirstChild("HumanoidRootPart") ~= nil and newplr.Name ~= player.Name  and newplr.Character.Humanoid.Health > 0 then
+                local pos, vis = camera:WorldToViewportPoint(newplr.Character.HumanoidRootPart.Position)
+                if vis then
+                    local Scale = newplr.Character.Head.Size.Y/2
+                    local Size = Vector3.new(2, 3, 1.5) * (Scale * 2) -- Change this for different box size
+
+                    local Top1 = camera:WorldToViewportPoint((newplr.Character.HumanoidRootPart.CFrame * CFrame.new(-Size.X, Size.Y, -Size.Z)).p)
+                    local Top2 = camera:WorldToViewportPoint((newplr.Character.HumanoidRootPart.CFrame * CFrame.new(-Size.X, Size.Y, Size.Z)).p)
+                    local Top3 = camera:WorldToViewportPoint((newplr.Character.HumanoidRootPart.CFrame * CFrame.new(Size.X, Size.Y, Size.Z)).p)
+                    local Top4 = camera:WorldToViewportPoint((newplr.Character.HumanoidRootPart.CFrame * CFrame.new(Size.X, Size.Y, -Size.Z)).p)
+
+                    local Bottom1 = camera:WorldToViewportPoint((newplr.Character.HumanoidRootPart.CFrame * CFrame.new(-Size.X, -Size.Y, -Size.Z)).p)
+                    local Bottom2 = camera:WorldToViewportPoint((newplr.Character.HumanoidRootPart.CFrame * CFrame.new(-Size.X, -Size.Y, Size.Z)).p)
+                    local Bottom3 = camera:WorldToViewportPoint((newplr.Character.HumanoidRootPart.CFrame * CFrame.new(Size.X, -Size.Y, Size.Z)).p)
+                    local Bottom4 = camera:WorldToViewportPoint((newplr.Character.HumanoidRootPart.CFrame * CFrame.new(Size.X, -Size.Y, -Size.Z)).p)
+
+ 
+                    --// Tracer:
+                    if Tracers then
+                        local trace = camera:WorldToViewportPoint((newplr.Character.HumanoidRootPart.CFrame * CFrame.new(0, -Size.Y, 0)).p)
+
+                        Tracer.From = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y)
+                        Tracer.To = Vector2.new(trace.X, trace.Y)
+                    end
+
+                    --// Teamcheck:
+                    if Team_Check then
+                        if newplr.TeamColor == player.TeamColor then
+                            line1.Color = green
+                            line2.Color = green
+                            line3.Color = green
+                            line4.Color = green
+                            line5.Color = green
+                            line6.Color = green
+                            line7.Color = green
+                            line8.Color = green
+                            line9.Color = green
+                            line10.Color = green
+                            line11.Color = green
+                            line12.Color = green
+                            Tracer.Color = green
+                        else 
+                            line1.Color = red
+                            line2.Color = red
+                            line3.Color = red
+                            line4.Color = red
+                            line5.Color = red
+                            line6.Color = red
+                            line7.Color = red
+                            line8.Color = red
+                            line9.Color = red
+                            line10.Color = red
+                            line11.Color = red
+                            line12.Color = red
+                            Tracer.Color = red
+                        end
+                    end
+
+                    --// Autothickness:
+                    if Autothickness then
+                        local distance = (player.Character.HumanoidRootPart.Position - newplr.Character.HumanoidRootPart.Position).magnitude
+                        local value = math.clamp(1/distance*100, 0.1, 4) --0.1 is min thickness, 6 is max
+                        line1.Thickness = value
+                        line2.Thickness = value
+                        line3.Thickness = value
+                        line4.Thickness = value
+                        line5.Thickness = value
+                        line6.Thickness = value
+                        line7.Thickness = value
+                        line8.Thickness = value
+                        line9.Thickness = value
+                        line10.Thickness = value
+                        line11.Thickness = value
+                        line12.Thickness = value
+                    else 
+                        line1.Thickness = Box_Thickness
+                        line2.Thickness = Box_Thickness
+                        line3.Thickness = Box_Thickness
+                        line4.Thickness = Box_Thickness
+                        line5.Thickness = Box_Thickness
+                        line6.Thickness = Box_Thickness
+                        line7.Thickness = Box_Thickness
+                        line8.Thickness = Box_Thickness
+                        line9.Thickness = Box_Thickness
+                        line10.Thickness = Box_Thickness
+                        line11.Thickness = Box_Thickness
+                        line12.Thickness = Box_Thickness
+                    end
+
+                    line1.Visible = true
+                    line2.Visible = true
+                    line3.Visible = true
+                    line4.Visible = true
+                    line5.Visible = true
+                    line6.Visible = true
+                    line7.Visible = true
+                    line8.Visible = true
+                    line9.Visible = true
+                    line10.Visible = true
+                    line11.Visible = true
+                    line12.Visible = true
+                    if Tracers then
+                        Tracer.Visible = true
+                    end
+                else 
+                    line1.Visible = false
+                    line2.Visible = false
+                    line3.Visible = false
+                    line4.Visible = false
+                    line5.Visible = false
+                    line6.Visible = false
+                    line7.Visible = false
+                    line8.Visible = false
+                    line9.Visible = false
+                    line10.Visible = false
+                    line11.Visible = false
+                    line12.Visible = false
+                    Tracer.Visible = false
+                end
+            else 
+                line1.Visible = false
+                line2.Visible = false
+                line3.Visible = false
+                line4.Visible = false
+                line5.Visible = false
+                line6.Visible = false
+                line7.Visible = false
+                line8.Visible = false
+                line9.Visible = false
+                line10.Visible = false
+                line11.Visible = false
+                line12.Visible = false
+                Tracer.Visible = false
+                if game.Players:FindFirstChild(newplr.Name) == nil then
+                    connection:Disconnect()
+                end
+                end
+                end)
+                end
+        coroutine.wrap(ESP)()
+    end)
+end)
+
+EspSection:NewButton("Chams", "Looks nice", function()
+    _G.FriendColor = Color3.fromRGB(0, 255, 0)
+    _G.EnemyColor = Color3.fromRGB(255, 0, 0)
+    _G.UseTeamColor = true
+    
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/zeroisswag/universal-esp/main/esp.lua"))()
+end)
+
+
+
+EspSection:NewButton("2D Box Esp", "why", function()
+local Settings = {
+    Box_Color = Color3.fromRGB(255, 0, 0),
+    Tracer_Color = Color3.fromRGB(255, 0, 0),
+    Tracer_Thickness = 1,
+    Box_Thickness = 1,
+    Tracer_Origin = "Bottom", -- Middle or Bottom if FollowMouse is on this won't matter...
+    Tracer_FollowMouse = false,
+    Tracers = false
+}
+local Team_Check = {
+    TeamCheck = false, -- if TeamColor is on this won't matter...
+    Green = Color3.fromRGB(0, 255, 0),
+    Red = Color3.fromRGB(255, 0, 0)
+}
+local TeamColor = true
+
+--// SEPARATION
+local player = game:GetService("Players").LocalPlayer
+local camera = game:GetService("Workspace").CurrentCamera
+local mouse = player:GetMouse()
+
+local function NewQuad(thickness, color)
+    local quad = Drawing.new("Quad")
+    quad.Visible = false
+    quad.PointA = Vector2.new(0,0)
+    quad.PointB = Vector2.new(0,0)
+    quad.PointC = Vector2.new(0,0)
+    quad.PointD = Vector2.new(0,0)
+    quad.Color = color
+    quad.Filled = false
+    quad.Thickness = thickness
+    quad.Transparency = 1
+    return quad
+end
+
+local function NewLine(thickness, color)
+    local line = Drawing.new("Line")
+    line.Visible = false
+    line.From = Vector2.new(0, 0)
+    line.To = Vector2.new(0, 0)
+    line.Color = color 
+    line.Thickness = thickness
+    line.Transparency = 1
+    return line
+end
+
+local function Visibility(state, lib)
+    for u, x in pairs(lib) do
+        x.Visible = state
+    end
+end
+
+local function ToColor3(col) --Function to convert, just cuz c;
+    local r = col.r --Red value
+    local g = col.g --Green value
+    local b = col.b --Blue value
+    return Color3.new(r,g,b); --Color3 datatype, made of the RGB inputs
+end
+
+local black = Color3.fromRGB(0, 0 ,0)
+local function ESP(plr)
+    local library = {
+        --//Tracer and Black Tracer(black border)
+        blacktracer = NewLine(Settings.Tracer_Thickness*2, black),
+        tracer = NewLine(Settings.Tracer_Thickness, Settings.Tracer_Color),
+        --//Box and Black Box(black border)
+        black = NewQuad(Settings.Box_Thickness*2, black),
+        box = NewQuad(Settings.Box_Thickness, Settings.Box_Color),
+        --//Bar and Green Health Bar (part that moves up/down)
+        healthbar = NewLine(3, black),
+        greenhealth = NewLine(1.5, black)
+    }
+
+    local function Colorize(color)
+        for u, x in pairs(library) do
+            if x ~= library.healthbar and x ~= library.greenhealth and x ~= library.blacktracer and x ~= library.black then
+                x.Color = color
+            end
+        end
+    end
+
+    local function Updater()
+        local connection
+        connection = game:GetService("RunService").RenderStepped:Connect(function()
+            if plr.Character ~= nil and plr.Character:FindFirstChild("Humanoid") ~= nil and plr.Character:FindFirstChild("HumanoidRootPart") ~= nil and plr.Character.Humanoid.Health > 0 and plr.Character:FindFirstChild("Head") ~= nil then
+                local HumPos, OnScreen = camera:WorldToViewportPoint(plr.Character.HumanoidRootPart.Position)
+                if OnScreen then
+                    local head = camera:WorldToViewportPoint(plr.Character.Head.Position)
+                    local DistanceY = math.clamp((Vector2.new(head.X, head.Y) - Vector2.new(HumPos.X, HumPos.Y)).magnitude, 2, math.huge)
+                    
+                    local function Size(item)
+                        item.PointA = Vector2.new(HumPos.X + DistanceY, HumPos.Y - DistanceY*2)
+                        item.PointB = Vector2.new(HumPos.X - DistanceY, HumPos.Y - DistanceY*2)
+                        item.PointC = Vector2.new(HumPos.X - DistanceY, HumPos.Y + DistanceY*2)
+                        item.PointD = Vector2.new(HumPos.X + DistanceY, HumPos.Y + DistanceY*2)
+                    end
+                    Size(library.box)
+                    Size(library.black)
+
+                    --//Tracer 
+                    if Settings.Tracers then
+                        if Settings.Tracer_Origin == "Middle" then
+                            library.tracer.From = camera.ViewportSize*0.5
+                            library.blacktracer.From = camera.ViewportSize*0.5
+                        elseif Settings.Tracer_Origin == "Bottom" then
+                            library.tracer.From = Vector2.new(camera.ViewportSize.X*0.5, camera.ViewportSize.Y) 
+                            library.blacktracer.From = Vector2.new(camera.ViewportSize.X*0.5, camera.ViewportSize.Y)
+                        end
+                        if Settings.Tracer_FollowMouse then
+                            library.tracer.From = Vector2.new(mouse.X, mouse.Y+36)
+                            library.blacktracer.From = Vector2.new(mouse.X, mouse.Y+36)
+                        end
+                        library.tracer.To = Vector2.new(HumPos.X, HumPos.Y + DistanceY*2)
+                        library.blacktracer.To = Vector2.new(HumPos.X, HumPos.Y + DistanceY*2)
+                    else 
+                        library.tracer.From = Vector2.new(0, 0)
+                        library.blacktracer.From = Vector2.new(0, 0)
+                        library.tracer.To = Vector2.new(0, 0)
+                        library.blacktracer.To = Vector2.new(0, 02)
+                    end
+
+                    --// Health Bar
+                    local d = (Vector2.new(HumPos.X - DistanceY, HumPos.Y - DistanceY*2) - Vector2.new(HumPos.X - DistanceY, HumPos.Y + DistanceY*2)).magnitude 
+                    local healthoffset = plr.Character.Humanoid.Health/plr.Character.Humanoid.MaxHealth * d
+
+                    library.greenhealth.From = Vector2.new(HumPos.X - DistanceY - 4, HumPos.Y + DistanceY*2)
+                    library.greenhealth.To = Vector2.new(HumPos.X - DistanceY - 4, HumPos.Y + DistanceY*2 - healthoffset)
+
+                    library.healthbar.From = Vector2.new(HumPos.X - DistanceY - 4, HumPos.Y + DistanceY*2)
+                    library.healthbar.To = Vector2.new(HumPos.X - DistanceY - 4, HumPos.Y - DistanceY*2)
+
+                    local green = Color3.fromRGB(0, 255, 0)
+                    local red = Color3.fromRGB(255, 0, 0)
+
+                    library.greenhealth.Color = red:lerp(green, plr.Character.Humanoid.Health/plr.Character.Humanoid.MaxHealth);
+
+                    if Team_Check.TeamCheck then
+                        if plr.TeamColor == player.TeamColor then
+                            Colorize(Team_Check.Green)
+                        else 
+                            Colorize(Team_Check.Red)
+                        end
+                    else 
+                        library.tracer.Color = Settings.Tracer_Color
+                        library.box.Color = Settings.Box_Color
+                    end
+                    if TeamColor == true then
+                        Colorize(plr.TeamColor.Color)
+                    end
+                    Visibility(true, library)
+                else 
+                    Visibility(false, library)
+                end
+            else 
+                Visibility(false, library)
+                if game.Players:FindFirstChild(plr.Name) == nil then
+                    connection:Disconnect()
+                end
+            end
+        end)
+    end
+    coroutine.wrap(Updater)()
+end
+
+for i, v in pairs(game:GetService("Players"):GetPlayers()) do
+    if v.Name ~= player.Name then
+        coroutine.wrap(ESP)(v)
+    end
+end
+
+game.Players.PlayerAdded:Connect(function(newplr)
+    if newplr.Name ~= player.Name then
+        coroutine.wrap(ESP)(newplr)
+        end
+    end)
+end)
+
+
+
+
+
+EspSection:NewButton("Corner 2D Box ESP", ":P", function()
+-- Settings
+local Settings = {
+    Box_Color = Color3.fromRGB(0, 0, 0),
+    Box_Thickness = 2,
+    Team_Check = true,
+    Team_Color = true,
+    Autothickness = true
+}
+
+--Locals
+local Space = game:GetService("Workspace")
+local Player = game:GetService("Players").LocalPlayer
+local Camera = Space.CurrentCamera
+
+-- Locals
+local function NewLine(color, thickness)
+    local line = Drawing.new("Line")
+    line.Visible = false
+    line.From = Vector2.new(0, 0)
+    line.To = Vector2.new(0, 0)
+    line.Color = color
+    line.Thickness = thickness
+    line.Transparency = 1
+    return line
+end
+
+local function Vis(lib, state)
+    for i, v in pairs(lib) do
+        v.Visible = state
+    end
+end
+
+local function Colorize(lib, color)
+    for i, v in pairs(lib) do
+        v.Color = color
+    end
+end
+
+local Black = Color3.fromRGB(0, 0, 0)
+
+local function Rainbow(lib, delay)
+    for hue = 0, 1, 1/30000000 do
+        local color = Color3.fromHSV(hue, 0.6, 1)
+        Colorize(lib, color)
+        wait(delay)
+    end
+    Rainbow(lib)
+end
+--Main Draw Function
+local function Main(plr)
+    repeat wait() until plr.Character ~= nil and plr.Character:FindFirstChild("Humanoid") ~= nil
+    local R15
+    if plr.Character.Humanoid.RigType == Enum.HumanoidRigType.R15 then
+        R15 = true
+    else 
+        R15 = false
+    end
+    local Library = {
+        TL1 = NewLine(Settings.Box_Color, Settings.Box_Thickness),
+        TL2 = NewLine(Settings.Box_Color, Settings.Box_Thickness),
+
+        TR1 = NewLine(Settings.Box_Color, Settings.Box_Thickness),
+        TR2 = NewLine(Settings.Box_Color, Settings.Box_Thickness),
+
+        BL1 = NewLine(Settings.Box_Color, Settings.Box_Thickness),
+        BL2 = NewLine(Settings.Box_Color, Settings.Box_Thickness),
+
+        BR1 = NewLine(Settings.Box_Color, Settings.Box_Thickness),
+        BR2 = NewLine(Settings.Box_Color, Settings.Box_Thickness)
+    }
+    coroutine.wrap(Rainbow)(Library, 0.15)
+    local oripart = Instance.new("Part")
+    oripart.Parent = Space
+    oripart.Transparency = 1
+    oripart.CanCollide = false
+    oripart.Size = Vector3.new(1, 1, 1)
+    oripart.Position = Vector3.new(0, 0, 0)
+    --Updater Loop
+    local function Updater()
+        local c 
+        c = game:GetService("RunService").RenderStepped:Connect(function()
+            if plr.Character ~= nil and plr.Character:FindFirstChild("Humanoid") ~= nil and plr.Character:FindFirstChild("HumanoidRootPart") ~= nil and plr.Character.Humanoid.Health > 0 and plr.Character:FindFirstChild("Head") ~= nil then
+                local Hum = plr.Character
+                local HumPos, vis = Camera:WorldToViewportPoint(Hum.HumanoidRootPart.Position)
+                if vis then
+                    oripart.Size = Vector3.new(Hum.HumanoidRootPart.Size.X, Hum.HumanoidRootPart.Size.Y*1.5, Hum.HumanoidRootPart.Size.Z)
+                    oripart.CFrame = CFrame.new(Hum.HumanoidRootPart.CFrame.Position, Camera.CFrame.Position)
+                    local SizeX = oripart.Size.X
+                    local SizeY = oripart.Size.Y
+                    local TL = Camera:WorldToViewportPoint((oripart.CFrame * CFrame.new(SizeX, SizeY, 0)).p)
+                    local TR = Camera:WorldToViewportPoint((oripart.CFrame * CFrame.new(-SizeX, SizeY, 0)).p)
+                    local BL = Camera:WorldToViewportPoint((oripart.CFrame * CFrame.new(SizeX, -SizeY, 0)).p)
+                    local BR = Camera:WorldToViewportPoint((oripart.CFrame * CFrame.new(-SizeX, -SizeY, 0)).p)
+
+                    if Settings.Team_Check then
+                        if plr.TeamColor == Player.TeamColor then
+                            Colorize(Library, Color3.fromRGB(0, 255, 0))
+                        else 
+                            Colorize(Library, Color3.fromRGB(255, 0, 0))
+                        end
+                    end
+
+                    if Settings.Team_Color then
+                        Colorize(Library, plr.TeamColor.Color)
+                    end
+
+                    local ratio = (Camera.CFrame.p - Hum.HumanoidRootPart.Position).magnitude
+                    local offset = math.clamp(1/ratio*750, 2, 300)
+
+                    Library.TL1.From = Vector2.new(TL.X, TL.Y)
+                    Library.TL1.To = Vector2.new(TL.X + offset, TL.Y)
+                    Library.TL2.From = Vector2.new(TL.X, TL.Y)
+                    Library.TL2.To = Vector2.new(TL.X, TL.Y + offset)
+
+                    Library.TR1.From = Vector2.new(TR.X, TR.Y)
+                    Library.TR1.To = Vector2.new(TR.X - offset, TR.Y)
+                    Library.TR2.From = Vector2.new(TR.X, TR.Y)
+                    Library.TR2.To = Vector2.new(TR.X, TR.Y + offset)
+
+                    Library.BL1.From = Vector2.new(BL.X, BL.Y)
+                    Library.BL1.To = Vector2.new(BL.X + offset, BL.Y)
+                    Library.BL2.From = Vector2.new(BL.X, BL.Y)
+                    Library.BL2.To = Vector2.new(BL.X, BL.Y - offset)
+
+                    Library.BR1.From = Vector2.new(BR.X, BR.Y)
+                    Library.BR1.To = Vector2.new(BR.X - offset, BR.Y)
+                    Library.BR2.From = Vector2.new(BR.X, BR.Y)
+                    Library.BR2.To = Vector2.new(BR.X, BR.Y - offset)
+
+                    Vis(Library, true)
+
+                    if Settings.Autothickness then
+                        local distance = (Player.Character.HumanoidRootPart.Position - oripart.Position).magnitude
+                        local value = math.clamp(1/distance*100, 1, 4) --0.1 is min thickness, 6 is max
+                        for u, x in pairs(Library) do
+                            x.Thickness = value
+                        end
+                    else 
+                        for u, x in pairs(Library) do
+                            x.Thickness = Settings.Box_Thickness
+                        end
+                    end
+                else 
+                    Vis(Library, false)
+                end
+            else 
+                Vis(Library, false)
+                if game:GetService("Players"):FindFirstChild(plr.Name) == nil then
+                    for i, v in pairs(Library) do
+                        v:Remove()
+                        oripart:Destroy()
+                    end
+                    c:Disconnect()
+                end
+            end
+        end)
+    end
+    coroutine.wrap(Updater)()
+end
+
+-- Draw Boxes
+for i, v in pairs(game:GetService("Players"):GetPlayers()) do
+    if v.Name ~= Player.Name then
+      coroutine.wrap(Main)(v)
+    end
+end
+
+game:GetService("Players").PlayerAdded:Connect(function(newplr)
+    coroutine.wrap(Main)(newplr)
+    end)
+end)
+
+
+
+
+
+
+    EspSection:NewButton("3D Box Esp", "-_-", function()
+
+--// Locals:
+local workspace = game:GetService("Workspace")
+local player = game:GetService("Players").LocalPlayer
+local camera = workspace.CurrentCamera
+
+--// Settings:
+local on = true -- Use this if your making gui
+
+local Box_Color = Color3.fromRGB(255, 0, 0)
+local Box_Thickness = 2
+local Box_Transparency = 1 -- 1 Visible, 0 Not Visible
+
+local Tracers = false
+local Tracer_Color = Color3.fromRGB(255, 0, 0)
+local Tracer_Thickness = 2
+local Tracer_Transparency = 1 -- 1 Visible, 0 Not Visible
+
+local Autothickness = true -- Makes screen less encumbered
+
+local Team_Check = true
+local red = Color3.fromRGB(227, 52, 52)
+local green = Color3.fromRGB(88, 217, 24)
+
+--// Main Function:
+for i, v in pairs(game.Players:GetChildren()) do
+    --// Lines for 3D box (12)
+    local line1 = Drawing.new("Line")
+    line1.Visible = false
+    line1.Color = Box_Color
+    line1.Thickness = Box_Thickness
+    line1.Transparency = Box_Transparency
+
+    local line2 = Drawing.new("Line")
+    line2.Visible = false
+    line2.Color = Box_Color
+    line2.Thickness = Box_Thickness
+    line2.Transparency = Box_Transparency
+
+    local line3 = Drawing.new("Line")
+    line3.Visible = false
+    line3.Color = Box_Color
+    line3.Thickness = Box_Thickness
+    line3.Transparency = Box_Transparency
+
+    local line4 = Drawing.new("Line")
+    line4.Visible = false
+    line4.Color = Box_Color
+    line4.Thickness = Box_Thickness
+    line4.Transparency = Box_Transparency
+
+    local line5 = Drawing.new("Line")
+    line5.Visible = false
+    line5.Color = Box_Color
+    line5.Thickness = Box_Thickness
+    line5.Transparency = Box_Transparency
+
+    local line6 = Drawing.new("Line")
+    line6.Visible = false
+    line6.Color = Box_Color
+    line6.Thickness = Box_Thickness
+    line6.Transparency = Box_Transparency
+
+    local line7 = Drawing.new("Line")
+    line7.Visible = false
+    line7.Color = Box_Color
+    line7.Thickness = Box_Thickness
+    line7.Transparency = Box_Transparency
+
+    local line8 = Drawing.new("Line")
+    line8.Visible = false
+    line8.Color = Box_Color
+    line8.Thickness = Box_Thickness
+    line8.Transparency = Box_Transparency
+
+    local line9 = Drawing.new("Line")
+    line9.Visible = false
+    line9.Color = Box_Color
+    line9.Thickness = Box_Thickness
+    line9.Transparency = Box_Transparency
+
+    local line10 = Drawing.new("Line")
+    line10.Visible = false
+    line10.Color = Box_Color
+    line10.Thickness = Box_Thickness
+    line10.Transparency = Box_Transparency
+
+    local line11 = Drawing.new("Line")
+    line11.Visible = false
+    line11.Color = Box_Color
+    line11.Thickness = Box_Thickness
+    line11.Transparency = Box_Transparency
+
+    local line12 = Drawing.new("Line")
+    line12.Visible = false
+    line12.Color = Box_Color
+    line12.Thickness = Box_Thickness
+    line12.Transparency = Box_Transparency
+    
+    local Tracer = Drawing.new("Line")
+    Tracer.Visible = false
+    Tracer.Color = Tracer_Color
+    Tracer.Thickness = Tracer_Thickness
+    Tracer.Transparency = Tracer_Transparency
+
+    --// Updates ESP (lines) in render loop
+    local function ESP()
+        local connection
+        connection = game:GetService("RunService").RenderStepped:Connect(function()
+            if on and v.Character ~= nil and v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil and v.Name ~= player.Name  and v.Character.Humanoid.Health > 0 then
+                local pos, vis = camera:WorldToViewportPoint(v.Character.HumanoidRootPart.Position)
+                if vis then
+                    local Scale = v.Character.Head.Size.Y/2
+                    local Size = Vector3.new(2, 3, 1.5) * (Scale * 2) -- Change this for different box size
+
+                    local Top1 = camera:WorldToViewportPoint((v.Character.HumanoidRootPart.CFrame * CFrame.new(-Size.X, Size.Y, -Size.Z)).p)
+                    local Top2 = camera:WorldToViewportPoint((v.Character.HumanoidRootPart.CFrame * CFrame.new(-Size.X, Size.Y, Size.Z)).p)
+                    local Top3 = camera:WorldToViewportPoint((v.Character.HumanoidRootPart.CFrame * CFrame.new(Size.X, Size.Y, Size.Z)).p)
+                    local Top4 = camera:WorldToViewportPoint((v.Character.HumanoidRootPart.CFrame * CFrame.new(Size.X, Size.Y, -Size.Z)).p)
+
+                    local Bottom1 = camera:WorldToViewportPoint((v.Character.HumanoidRootPart.CFrame * CFrame.new(-Size.X, -Size.Y, -Size.Z)).p)
+                    local Bottom2 = camera:WorldToViewportPoint((v.Character.HumanoidRootPart.CFrame * CFrame.new(-Size.X, -Size.Y, Size.Z)).p)
+                    local Bottom3 = camera:WorldToViewportPoint((v.Character.HumanoidRootPart.CFrame * CFrame.new(Size.X, -Size.Y, Size.Z)).p)
+                    local Bottom4 = camera:WorldToViewportPoint((v.Character.HumanoidRootPart.CFrame * CFrame.new(Size.X, -Size.Y, -Size.Z)).p)
+
+                    --// Top:
+                    line1.From = Vector2.new(Top1.X, Top1.Y)
+                    line1.To = Vector2.new(Top2.X, Top2.Y)
+
+                    line2.From = Vector2.new(Top2.X, Top2.Y)
+                    line2.To = Vector2.new(Top3.X, Top3.Y)
+
+                    line3.From = Vector2.new(Top3.X, Top3.Y)
+                    line3.To = Vector2.new(Top4.X, Top4.Y)
+
+                    line4.From = Vector2.new(Top4.X, Top4.Y)
+                    line4.To = Vector2.new(Top1.X, Top1.Y)
+
+                    --// Bottom:
+                    line5.From = Vector2.new(Bottom1.X, Bottom1.Y)
+                    line5.To = Vector2.new(Bottom2.X, Bottom2.Y)
+
+                    line6.From = Vector2.new(Bottom2.X, Bottom2.Y)
+                    line6.To = Vector2.new(Bottom3.X, Bottom3.Y)
+
+                    line7.From = Vector2.new(Bottom3.X, Bottom3.Y)
+                    line7.To = Vector2.new(Bottom4.X, Bottom4.Y)
+
+                    line8.From = Vector2.new(Bottom4.X, Bottom4.Y)
+                    line8.To = Vector2.new(Bottom1.X, Bottom1.Y)
+
+                    --//S ides:
+                    line9.From = Vector2.new(Bottom1.X, Bottom1.Y)
+                    line9.To = Vector2.new(Top1.X, Top1.Y)
+
+                    line10.From = Vector2.new(Bottom2.X, Bottom2.Y)
+                    line10.To = Vector2.new(Top2.X, Top2.Y)
+
+                    line11.From = Vector2.new(Bottom3.X, Bottom3.Y)
+                    line11.To = Vector2.new(Top3.X, Top3.Y)
+
+                    line12.From = Vector2.new(Bottom4.X, Bottom4.Y)
+                    line12.To = Vector2.new(Top4.X, Top4.Y)
+
+                    --// Tracer:
+                    if Tracers then
+                        local trace = camera:WorldToViewportPoint((v.Character.HumanoidRootPart.CFrame * CFrame.new(0, -Size.Y, 0)).p)
+
+                        Tracer.From = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y)
+                        Tracer.To = Vector2.new(trace.X, trace.Y)
+                    end
+
+                    --// Teamcheck:
+                    if Team_Check then
+                        if v.TeamColor == player.TeamColor then
+                            line1.Color = green
+                            line2.Color = green
+                            line3.Color = green
+                            line4.Color = green
+                            line5.Color = green
+                            line6.Color = green
+                            line7.Color = green
+                            line8.Color = green
+                            line9.Color = green
+                            line10.Color = green
+                            line11.Color = green
+                            line12.Color = green
+                            Tracer.Color = green
+                        else 
+                            line1.Color = red
+                            line2.Color = red
+                            line3.Color = red
+                            line4.Color = red
+                            line5.Color = red
+                            line6.Color = red
+                            line7.Color = red
+                            line8.Color = red
+                            line9.Color = red
+                            line10.Color = red
+                            line11.Color = red
+                            line12.Color = red
+                            Tracer.Color = red
+                        end
+                    end
+
+                    --// Autothickness:
+                    if Autothickness then
+                        local distance = (player.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).magnitude
+                        local value = math.clamp(1/distance*100, 0.1, 4) --0.1 is min thickness, 6 is max
+                        line1.Thickness = value
+                        line2.Thickness = value
+                        line3.Thickness = value
+                        line4.Thickness = value
+                        line5.Thickness = value
+                        line6.Thickness = value
+                        line7.Thickness = value
+                        line8.Thickness = value
+                        line9.Thickness = value
+                        line10.Thickness = value
+                        line11.Thickness = value
+                        line12.Thickness = value
+                    else 
+                        line1.Thickness = Box_Thickness
+                        line2.Thickness = Box_Thickness
+                        line3.Thickness = Box_Thickness
+                        line4.Thickness = Box_Thickness
+                        line5.Thickness = Box_Thickness
+                        line6.Thickness = Box_Thickness
+                        line7.Thickness = Box_Thickness
+                        line8.Thickness = Box_Thickness
+                        line9.Thickness = Box_Thickness
+                        line10.Thickness = Box_Thickness
+                        line11.Thickness = Box_Thickness
+                        line12.Thickness = Box_Thickness
+                    end
+
+                    line1.Visible = true
+                    line2.Visible = true
+                    line3.Visible = true
+                    line4.Visible = true
+                    line5.Visible = true
+                    line6.Visible = true
+                    line7.Visible = true
+                    line8.Visible = true
+                    line9.Visible = true
+                    line10.Visible = true
+                    line11.Visible = true
+                    line12.Visible = true
+                    if Tracers then
+                        Tracer.Visible = true
+                    end
+                else 
+                    line1.Visible = false
+                    line2.Visible = false
+                    line3.Visible = false
+                    line4.Visible = false
+                    line5.Visible = false
+                    line6.Visible = false
+                    line7.Visible = false
+                    line8.Visible = false
+                    line9.Visible = false
+                    line10.Visible = false
+                    line11.Visible = false
+                    line12.Visible = false
+                    Tracer.Visible = false
+                end
+            else 
+                line1.Visible = false
+                line2.Visible = false
+                line3.Visible = false
+                line4.Visible = false
+                line5.Visible = false
+                line6.Visible = false
+                line7.Visible = false
+                line8.Visible = false
+                line9.Visible = false
+                line10.Visible = false
+                line11.Visible = false
+                line12.Visible = false
+                Tracer.Visible = false
+                if game.Players:FindFirstChild(v.Name) == nil then
+                    connection:Disconnect()
+                end
+            end
+        end)
+    end
+    coroutine.wrap(ESP)()
+end
+
+game.Players.PlayerAdded:Connect(function(newplr)
+    --// Lines for 3D box (12)
+    local line1 = Drawing.new("Line")
+    line1.Visible = false
+    line1.Color = Box_Color
+    line1.Thickness = Box_Thickness
+    line1.Transparency = Box_Transparency
+
+    local line2 = Drawing.new("Line")
+    line2.Visible = false
+    line2.Color = Box_Color
+    line2.Thickness = Box_Thickness
+    line2.Transparency = Box_Transparency
+
+    local line3 = Drawing.new("Line")
+    line3.Visible = false
+    line3.Color = Box_Color
+    line3.Thickness = Box_Thickness
+    line3.Transparency = Box_Transparency
+
+    local line4 = Drawing.new("Line")
+    line4.Visible = false
+    line4.Color = Box_Color
+    line4.Thickness = Box_Thickness
+    line4.Transparency = Box_Transparency
+
+    local line5 = Drawing.new("Line")
+    line5.Visible = false
+    line5.Color = Box_Color
+    line5.Thickness = Box_Thickness
+    line5.Transparency = Box_Transparency
+
+    local line6 = Drawing.new("Line")
+    line6.Visible = false
+    line6.Color = Box_Color
+    line6.Thickness = Box_Thickness
+    line6.Transparency = Box_Transparency
+
+    local line7 = Drawing.new("Line")
+    line7.Visible = false
+    line7.Color = Box_Color
+    line7.Thickness = Box_Thickness
+    line7.Transparency = Box_Transparency
+
+    local line8 = Drawing.new("Line")
+    line8.Visible = false
+    line8.Color = Box_Color
+    line8.Thickness = Box_Thickness
+    line8.Transparency = Box_Transparency
+
+    local line9 = Drawing.new("Line")
+    line9.Visible = false
+    line9.Color = Box_Color
+    line9.Thickness = Box_Thickness
+    line9.Transparency = Box_Transparency
+
+    local line10 = Drawing.new("Line")
+    line10.Visible = false
+    line10.Color = Box_Color
+    line10.Thickness = Box_Thickness
+    line10.Transparency = Box_Transparency
+
+    local line11 = Drawing.new("Line")
+    line11.Visible = false
+    line11.Color = Box_Color
+    line11.Thickness = Box_Thickness
+    line11.Transparency = Box_Transparency
+
+    local line12 = Drawing.new("Line")
+    line12.Visible = false
+    line12.Color = Box_Color
+    line12.Thickness = Box_Thickness
+    line12.Transparency = Box_Transparency
+    
+    local Tracer = Drawing.new("Line")
+    Tracer.Visible = false
+    Tracer.Color = Tracer_Color
+    Tracer.Thickness = Tracer_Thickness
+    Tracer.Transparency = Tracer_Transparency
+
+    --// Updates ESP (lines) in render loop
+    local function ESP()
+        local connection
+        connection = game:GetService("RunService").RenderStepped:Connect(function()
+            if on and newplr.Character ~= nil and newplr.Character:FindFirstChild("Humanoid") ~= nil and newplr.Character:FindFirstChild("HumanoidRootPart") ~= nil and newplr.Name ~= player.Name  and newplr.Character.Humanoid.Health > 0 then
+                local pos, vis = camera:WorldToViewportPoint(newplr.Character.HumanoidRootPart.Position)
+                if vis then
+                    local Scale = newplr.Character.Head.Size.Y/2
+                    local Size = Vector3.new(2, 3, 1.5) * (Scale * 2) -- Change this for different box size
+
+                    local Top1 = camera:WorldToViewportPoint((newplr.Character.HumanoidRootPart.CFrame * CFrame.new(-Size.X, Size.Y, -Size.Z)).p)
+                    local Top2 = camera:WorldToViewportPoint((newplr.Character.HumanoidRootPart.CFrame * CFrame.new(-Size.X, Size.Y, Size.Z)).p)
+                    local Top3 = camera:WorldToViewportPoint((newplr.Character.HumanoidRootPart.CFrame * CFrame.new(Size.X, Size.Y, Size.Z)).p)
+                    local Top4 = camera:WorldToViewportPoint((newplr.Character.HumanoidRootPart.CFrame * CFrame.new(Size.X, Size.Y, -Size.Z)).p)
+
+                    local Bottom1 = camera:WorldToViewportPoint((newplr.Character.HumanoidRootPart.CFrame * CFrame.new(-Size.X, -Size.Y, -Size.Z)).p)
+                    local Bottom2 = camera:WorldToViewportPoint((newplr.Character.HumanoidRootPart.CFrame * CFrame.new(-Size.X, -Size.Y, Size.Z)).p)
+                    local Bottom3 = camera:WorldToViewportPoint((newplr.Character.HumanoidRootPart.CFrame * CFrame.new(Size.X, -Size.Y, Size.Z)).p)
+                    local Bottom4 = camera:WorldToViewportPoint((newplr.Character.HumanoidRootPart.CFrame * CFrame.new(Size.X, -Size.Y, -Size.Z)).p)
+
+                    --// Top:
+                    line1.From = Vector2.new(Top1.X, Top1.Y)
+                    line1.To = Vector2.new(Top2.X, Top2.Y)
+
+                    line2.From = Vector2.new(Top2.X, Top2.Y)
+                    line2.To = Vector2.new(Top3.X, Top3.Y)
+
+                    line3.From = Vector2.new(Top3.X, Top3.Y)
+                    line3.To = Vector2.new(Top4.X, Top4.Y)
+
+                    line4.From = Vector2.new(Top4.X, Top4.Y)
+                    line4.To = Vector2.new(Top1.X, Top1.Y)
+
+                    --// Bottom:
+                    line5.From = Vector2.new(Bottom1.X, Bottom1.Y)
+                    line5.To = Vector2.new(Bottom2.X, Bottom2.Y)
+
+                    line6.From = Vector2.new(Bottom2.X, Bottom2.Y)
+                    line6.To = Vector2.new(Bottom3.X, Bottom3.Y)
+
+                    line7.From = Vector2.new(Bottom3.X, Bottom3.Y)
+                    line7.To = Vector2.new(Bottom4.X, Bottom4.Y)
+
+                    line8.From = Vector2.new(Bottom4.X, Bottom4.Y)
+                    line8.To = Vector2.new(Bottom1.X, Bottom1.Y)
+
+                    --//S ides:
+                    line9.From = Vector2.new(Bottom1.X, Bottom1.Y)
+                    line9.To = Vector2.new(Top1.X, Top1.Y)
+
+                    line10.From = Vector2.new(Bottom2.X, Bottom2.Y)
+                    line10.To = Vector2.new(Top2.X, Top2.Y)
+
+                    line11.From = Vector2.new(Bottom3.X, Bottom3.Y)
+                    line11.To = Vector2.new(Top3.X, Top3.Y)
+
+                    line12.From = Vector2.new(Bottom4.X, Bottom4.Y)
+                    line12.To = Vector2.new(Top4.X, Top4.Y)
+
+                    --// Tracer:
+                    if Tracers then
+                        local trace = camera:WorldToViewportPoint((newplr.Character.HumanoidRootPart.CFrame * CFrame.new(0, -Size.Y, 0)).p)
+
+                        Tracer.From = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y)
+                        Tracer.To = Vector2.new(trace.X, trace.Y)
+                    end
+
+                    --// Teamcheck:
+                    if Team_Check then
+                        if newplr.TeamColor == player.TeamColor then
+                            line1.Color = green
+                            line2.Color = green
+                            line3.Color = green
+                            line4.Color = green
+                            line5.Color = green
+                            line6.Color = green
+                            line7.Color = green
+                            line8.Color = green
+                            line9.Color = green
+                            line10.Color = green
+                            line11.Color = green
+                            line12.Color = green
+                            Tracer.Color = green
+                        else 
+                            line1.Color = red
+                            line2.Color = red
+                            line3.Color = red
+                            line4.Color = red
+                            line5.Color = red
+                            line6.Color = red
+                            line7.Color = red
+                            line8.Color = red
+                            line9.Color = red
+                            line10.Color = red
+                            line11.Color = red
+                            line12.Color = red
+                            Tracer.Color = red
+                        end
+                    end
+
+                    --// Autothickness:
+                    if Autothickness then
+                        local distance = (player.Character.HumanoidRootPart.Position - newplr.Character.HumanoidRootPart.Position).magnitude
+                        local value = math.clamp(1/distance*100, 0.1, 4) --0.1 is min thickness, 6 is max
+                        line1.Thickness = value
+                        line2.Thickness = value
+                        line3.Thickness = value
+                        line4.Thickness = value
+                        line5.Thickness = value
+                        line6.Thickness = value
+                        line7.Thickness = value
+                        line8.Thickness = value
+                        line9.Thickness = value
+                        line10.Thickness = value
+                        line11.Thickness = value
+                        line12.Thickness = value
+                    else 
+                        line1.Thickness = Box_Thickness
+                        line2.Thickness = Box_Thickness
+                        line3.Thickness = Box_Thickness
+                        line4.Thickness = Box_Thickness
+                        line5.Thickness = Box_Thickness
+                        line6.Thickness = Box_Thickness
+                        line7.Thickness = Box_Thickness
+                        line8.Thickness = Box_Thickness
+                        line9.Thickness = Box_Thickness
+                        line10.Thickness = Box_Thickness
+                        line11.Thickness = Box_Thickness
+                        line12.Thickness = Box_Thickness
+                    end
+
+                    line1.Visible = true
+                    line2.Visible = true
+                    line3.Visible = true
+                    line4.Visible = true
+                    line5.Visible = true
+                    line6.Visible = true
+                    line7.Visible = true
+                    line8.Visible = true
+                    line9.Visible = true
+                    line10.Visible = true
+                    line11.Visible = true
+                    line12.Visible = true
+                    if Tracers then
+                        Tracer.Visible = true
+                    end
+                else 
+                    line1.Visible = false
+                    line2.Visible = false
+                    line3.Visible = false
+                    line4.Visible = false
+                    line5.Visible = false
+                    line6.Visible = false
+                    line7.Visible = false
+                    line8.Visible = false
+                    line9.Visible = false
+                    line10.Visible = false
+                    line11.Visible = false
+                    line12.Visible = false
+                    Tracer.Visible = false
+                end
+            else 
+                line1.Visible = false
+                line2.Visible = false
+                line3.Visible = false
+                line4.Visible = false
+                line5.Visible = false
+                line6.Visible = false
+                line7.Visible = false
+                line8.Visible = false
+                line9.Visible = false
+                line10.Visible = false
+                line11.Visible = false
+                line12.Visible = false
+                Tracer.Visible = false
+                if game.Players:FindFirstChild(newplr.Name) == nil then
+                    connection:Disconnect()
+                    end
+                end
+            end)
+        end
+        coroutine.wrap(ESP)()
+    end)
+end)
+
+
+
+
+
+
+
+    -- PLAYER
+    local Player = Window:NewTab("Player")
+    local PlayerSection = Player:NewSection("Player")
+ 
+
+
+
+    PlayerSection:NewSlider("Walkspeed", "Changes the walkspeed", 250, 16, function(v)  
+        getgenv().WalkSpeedValue = v;
+        local Player = game:service'Players'.LocalPlayer;
+        Player.Character.Humanoid:GetPropertyChangedSignal'WalkSpeed':Connect(function()
+        Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+        end)
+        Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+    end)
+
+    PlayerSection:NewSlider("JumpPower", "Changes the JumpPower", 250, 50, function(g)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = g
+    end)
+
+    PlayerSection:NewSlider("Gavity", "Changes the Gavity", 250, -20, function(v)
+        game.Workspace.Gravity = v
+    end)
+
+    PlayerSection:NewButton("Respawn", "Kills you", function()
+        game.Players.LocalPlayer.Character.Head:Remove()
+    end)
+
+
+    PlayerSection:NewButton("Infinite Jump", "", function()  
+        local InfiniteJumpEnabled = true
+        game:GetService("UserInputService").JumpRequest:connect(function()
+            if InfiniteJumpEnabled then
+                game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+            end
+        end)
+    end)
+
+
+
+    PlayerSection:NewButton("Rejoin", "Rejoin the same server", function()  
+        game:GetService("TeleportService"):Teleport(game.PlaceId)
+    end)
+
+
+    PlayerSection:NewButton("Server Hop", "joins a random server", function()
+        game:GetService("TeleportService"):Teleport(game.PlaceId)
+    end)
+
+
+    --Misc
+
+    local Misc = Window:NewTab("Misc")
+    local MiscSection = Misc:NewSection("Misc")
+
+
+    MiscSection:NewDropdown("Spawn", "DropdownInf", {"Nero", "Camaro", "Thunderbird", "Nighthawk"}, function(currentOption)
+        local A_1 = "UI"
+        local A_2 = "SpawnCar"
+        local A_3 = currentOption
+        local Event = game:GetService("ReplicatedStorage").Remote.RemoteFunction
+        Event:InvokeServer(A_1, A_2, A_3)
+    end)
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+        --Guis
+
+    local Guis = Window:NewTab("Other Guis")
+    local GuisSection = Guis:NewSection("Guis")
+
+    GuisSection:NewButton("Auto Rob (key)", "Made by SYL#0011", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ECLIPSEXHUB/ECLIPSE-X/main/ROB.lua"))()
+    end)
+
+    GuisSection:NewButton("TR1V5", "A Good Gui (with Auto Farm)", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/devpulco/tr1vvvv/main/README.md",true))()
+    end)
+
+    GuisSection:NewButton("Mad Lads", "A Good Gui (But the tp is pached)", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DevPuclo/Mad-ladsvv7/main/README.md",true))()
+    end)
+
+    GuisSection:NewButton("TurkOyuncu", "A Good Gui", function()
+        loadstring(game:HttpGet("https://gist.githubusercontent.com/TurkOyuncu99/811e25ec8cfcdaa9ae7026353288783c/raw/4b073a5c1a0a4e2ed7e2304c2e769eb440a371a9/h", true))()
+    end)
+
+    GuisSection:NewButton("BLACKGAMER", "A Good Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/devpulco/bandlans/main/README.md"))()
+    end)
+
+    GuisSection:NewButton("BananaChicken", "A Good Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptRUs/Banana/main/BananaChicken.lua",true))()
+    end)
+
+    GuisSection:NewButton("ECLIPSE X (key)", "A Good Gui by SYL#0011", function()
+        pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/ECLIPSEXHUB/ECLIPSE-X/main/ECLIPSE%20X.txt", true))()
+        end)
+    end)
+
+    GuisSection:NewButton("infinite yield", "A Gui with fly noclip and more", function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+    end)
+
+    GuisSection:NewButton("Fate's Admin", "You open it with Ö and you can see cmds with the command cmds", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
+    end)
+
+    GuisSection:NewButton("CMD - X", "A Gui with fly noclip and more", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source",true))()
+    end)
+
+    GuisSection:NewButton("Dex", "Dex explorer is like roblox studio (you can see the code)", function()
+        loadstring(game:HttpGet(('https://gist.githubusercontent.com/DinosaurXxX/b757fe011e7e600c0873f967fe427dc2/raw/ee5324771f017073fc30e640323ac2a9b3bfc550/dark%2520dex%2520v4'),true))()
+    end)
+
+
+
+ 
+       --Option
+
+       local Option = Window:NewTab("Options")
+       local OptionSection = Option:NewSection("Main")
+   
+       OptionSection:NewKeybind("Toggle UI", "Set Key bind to toggle the UI", Enum.KeyCode.RightAlt, function()
+           Library:ToggleUI()
+       end)
+    end
+
+
+
+
+
+    --Dollhouse Roleplay
+
+    --Main
+
+    if game.PlaceId == 417267366 then
+        local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+        local Window = Library.CreateLib("Boombox Visualizer Script Hub By Neko#4061", "BloodTheme")
+
+
+
+    local Main = Window:NewTab("Visualizer")
+    local MainSection = Main:NewSection("Main")
+
+    MainSection:NewButton("Verts Hub", "Verts Hub LOL", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/VBH32/Verts-Hub/main/Source"))();
+    end)
+
+    MainSection:NewButton("LuciusWare", "LuciusWare (Dont have a own dupe)", function()
+        loadstring(game:HttpGet("https://nkware.000webhostapp.com/LWOWNED.lua"))();
+    end)
+
+    MainSection:NewButton("Pineapple Hub", "Pineapple Hub LOL", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/3JBH/Boombox-Scripts/7fcf88234a99a9d0f440975638e291c393d194fc/PineApple.lua",true))()
+    end)
+
+    MainSection:NewButton("Fanta Hub", "Fanta Hub LOL", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/kyakuryc/fanta-hub/main/fanta_hub_raw.txt",true))()
+    end)
+
+    MainSection:NewButton("Space Hub", "!You need r6 avatar!  Space Hub takes a few moments to load", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/3JBH/Boombox-Scripts/7fcf88234a99a9d0f440975638e291c393d194fc/Space-Hub.lua", true))()
+    end)
+
+    MainSection:NewButton("Kore's Hub", "The Close dont work", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SoldoxD/SoldoxD/main/Kores%20Hub%20by%20unknown.txt", true))()
+    end)
+
+    MainSection:NewButton("Ghost Hub", "Ghost Hub LOL", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SoldoxD/SoldoxD/main/Ghost%20Hub", true))()
+    end)
+
+    MainSection:NewButton("Decayeds Hub", "Decayeds Hub LOL", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/3JBH/Boombox-Scripts/7fcf88234a99a9d0f440975638e291c393d194fc/Decayeds%20Hub.lua", true))()
+    end)
+
+    MainSection:NewButton("Cypher X", "Cypher X LOL", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/3JBH/Boombox-Scripts/7fcf88234a99a9d0f440975638e291c393d194fc/Cypher%20X.lua", true))()
+    end)
+
+
+
+    --More
+
+    local More = Window:NewTab("More")
+    local MoreSection = More:NewSection("Main")
+
+    MoreSection:NewButton("infinite yield", "A Gui with fly noclip and more", function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+    end)
+
+    MoreSection:NewButton("Fate's Admin", "You open it with Ö and you can see cmds with the command cmds", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
+    end)
+
+    MoreSection:NewButton("CMD - X", "A Gui with fly noclip and more", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source",true))()
+    end)
+
+    MoreSection:NewButton("Dex", "Dex explorer is like roblox studio (you can see the code)", function()
+        loadstring(game:HttpGet(('https://gist.githubusercontent.com/DinosaurXxX/b757fe011e7e600c0873f967fe427dc2/raw/ee5324771f017073fc30e640323ac2a9b3bfc550/dark%2520dex%2520v4'),true))()
+    end)
+
+    --Anti
+
+    local anti = Window:NewTab("Anti")
+    local antiSection = anti:NewSection("Main")
+
+    antiSection:NewButton("Anti Fling", "Dont Get you flingt any more", function()
+    -- // Constants  --
+    -- [ Services ] --
+    local Services = setmetatable({}, {__index = function(Self, Index)
+    local NewService = game.GetService(game, Index)
+    if NewService then
+    Self[Index] = NewService
+    end
+    return NewService
+    end})
+    
+    -- [ LocalPlayer ] --
+    local LocalPlayer = Services.Players.LocalPlayer
+    
+    -- // Functions  --
+    local function PlayerAdded(Player)
+       local Detected = false
+       local Character;
+       local PrimaryPart;
+    
+       local function CharacterAdded(NewCharacter)
+           Character = NewCharacter
+           repeat
+               wait()
+               PrimaryPart = NewCharacter:FindFirstChild("HumanoidRootPart")
+           until PrimaryPart
+           Detected = false
+       end
+    
+       CharacterAdded(Player.Character or Player.CharacterAdded:Wait())
+       Player.CharacterAdded:Connect(CharacterAdded)
+       Services.RunService.Heartbeat:Connect(function()
+           if (Character and Character:IsDescendantOf(workspace)) and (PrimaryPart and PrimaryPart:IsDescendantOf(Character)) then
+               if PrimaryPart.AssemblyAngularVelocity.Magnitude > 50 or PrimaryPart.AssemblyLinearVelocity.Magnitude > 100 then
+                   if Detected == false then
+                       game.StarterGui:SetCore("ChatMakeSystemMessage", {
+                           Text = "Fling Exploit detected, Player: " .. tostring(Player);
+                           Color = Color3.fromRGB(255, 200, 0);
+                       })
+                   end
+                   Detected = true
+                   for i,v in ipairs(Character:GetDescendants()) do
+                       if v:IsA("BasePart") then
+                           v.CanCollide = false
+                           v.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+                           v.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+                           v.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0)
+                       end
+                   end
+                   PrimaryPart.CanCollide = false
+                   PrimaryPart.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+                   PrimaryPart.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+                   PrimaryPart.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0)
+               end
+           end
+       end)
+    end
+    
+    -- // Event Listeners  --
+    for i,v in ipairs(Services.Players:GetPlayers()) do
+       if v ~= LocalPlayer then
+           PlayerAdded(v)
+       end
+    end
+    Services.Players.PlayerAdded:Connect(PlayerAdded)
+    
+    local LastPosition = nil
+    Services.RunService.Heartbeat:Connect(function()
+       pcall(function()
+           local PrimaryPart = LocalPlayer.Character.PrimaryPart
+           if PrimaryPart.AssemblyLinearVelocity.Magnitude > 250 or PrimaryPart.AssemblyAngularVelocity.Magnitude > 250 then
+               PrimaryPart.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+               PrimaryPart.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+               PrimaryPart.CFrame = LastPosition
+    
+               game.StarterGui:SetCore("ChatMakeSystemMessage", {
+                   Text = "You were flung. Neutralizing velocity.";
+                   Color = Color3.fromRGB(255, 0, 0);
+               })
+           elseif PrimaryPart.AssemblyLinearVelocity.Magnitude < 50 or PrimaryPart.AssemblyAngularVelocity.Magnitude > 50 then
+               LastPosition = PrimaryPart.CFrame
+           end
+       end)
+    end)
+ end)
+
+    antiSection:NewButton("Anti Crash", "Dont Get you kick or crashed any more", function()
+        local Players = game:GetService("Players")
+        local Workspace = game:GetService("Workspace")
+        
+        Workspace.DescendantRemoving:Connect(function(inst)
+            if inst:IsA("Motor6D") then
+                local Model = inst.Parent.Parent
+                if Model:IsA("Model") and Model:FindFirstChildOfClass("Humanoid") then
+                    for i,v in pairs(Model:GetChildren()) do
+                        if v:IsA("Accessory") and v:FindFirstChild("Handle") then
+                            local Cheque = v.Handle:FindFirstChildOfClass("WrapLayer")
+                            if Cheque then
+                                v:Destroy()
+                                --print("Destroyed possible crash attempt.")
+                            end
+                        end
+                    end
+                end
+            end
+        end)
+    end)
+
+
+    antiSection:NewButton("Anti kill", "Dont Get you killed by exploiters any more", function()
+        loadstring(game:HttpGet(('https://pastebin.com/raw/PxMdTW15'),true))()
+    end)
+
+
+
+       --Option
+
+    local Option = Window:NewTab("Options")
+    local OptionSection = Option:NewSection("Main")
+
+    OptionSection:NewKeybind("Toggle UI", "Set Key bind to toggle the UI", Enum.KeyCode.RightAlt, function()
+        Library:ToggleUI()
+    end)
+end
+
+
+
+
+    --Free Boombox
+
+    --Main
+
+    if game.PlaceId == 6142500718 then
+        local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+        local Window = Library.CreateLib("Boombox Visualizer Script Hub By Neko#4061", "BloodTheme")
+
+    local Main = Window:NewTab("Visualizer")
+    local MainSection = Main:NewSection("Main")
+
+    MainSection:NewButton("Verts Hub", "Verts Hub LOL", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/VBH32/Verts-Hub/main/Source"))();
+    end)
+
+    MainSection:NewButton("LuciusWare", "LuciusWare (Dont have a own dupe)", function()
+        loadstring(game:HttpGet("https://nkware.000webhostapp.com/LWOWNED.lua"))();
+    end)
+
+    MainSection:NewButton("Pineapple Hub", "Pineapple Hub LOL", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/3JBH/Boombox-Scripts/7fcf88234a99a9d0f440975638e291c393d194fc/PineApple.lua",true))()
+    end)
+
+    MainSection:NewButton("Fanta Hub", "Fanta Hub LOL", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/kyakuryc/fanta-hub/main/fanta_hub_raw.txt",true))()
+    end)
+
+    MainSection:NewButton("Space Hub", "!You need r6 avatar!  Space Hub takes a few moments to load", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/3JBH/Boombox-Scripts/7fcf88234a99a9d0f440975638e291c393d194fc/Space-Hub.lua", true))()
+    end)
+
+    MainSection:NewButton("Kore's Hub", "The Close dont work", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SoldoxD/SoldoxD/main/Kores%20Hub%20by%20unknown.txt", true))()
+    end)
+
+    MainSection:NewButton("Ghost Hub", "Ghost Hub LOL", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SoldoxD/SoldoxD/main/Ghost%20Hub", true))()
+    end)
+
+    MainSection:NewButton("Decayeds Hub", "Decayeds Hub LOL", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/3JBH/Boombox-Scripts/7fcf88234a99a9d0f440975638e291c393d194fc/Decayeds%20Hub.lua", true))()
+    end)
+
+    MainSection:NewButton("Cypher X", "Cypher X LOL", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/3JBH/Boombox-Scripts/7fcf88234a99a9d0f440975638e291c393d194fc/Cypher%20X.lua", true))()
+    end)
+
+
+
+    --More
+
+    local More = Window:NewTab("More")
+    local MoreSection = More:NewSection("Main")
+
+    MoreSection:NewButton("infinite yield", "A Gui with fly noclip and more", function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+    end)
+
+    MoreSection:NewButton("Fate's Admin", "You open it with Ö and you can see cmds with the command cmds", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
+    end)
+
+    MoreSection:NewButton("CMD - X", "A Gui with fly noclip and more", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source",true))()
+    end)
+
+    MoreSection:NewButton("Dex", "Dex explorer is like roblox studio (you can see the code)", function()
+        loadstring(game:HttpGet(('https://gist.githubusercontent.com/DinosaurXxX/b757fe011e7e600c0873f967fe427dc2/raw/ee5324771f017073fc30e640323ac2a9b3bfc550/dark%2520dex%2520v4'),true))()
+    end)
+
+
+        --Anti
+
+        local anti = Window:NewTab("Anti")
+        local antiSection = anti:NewSection("Main")
+    
+        antiSection:NewButton("Anti Fling", "Dont Get you flingt any more", function()
+            -- // Constants  --
+        -- [ Services ] --
+        local Services = setmetatable({}, {__index = function(Self, Index)
+        local NewService = game.GetService(game, Index)
+        if NewService then
+        Self[Index] = NewService
+        end
+        return NewService
+        end})
+        
+        -- [ LocalPlayer ] --
+        local LocalPlayer = Services.Players.LocalPlayer
+        
+        -- // Functions  --
+        local function PlayerAdded(Player)
+           local Detected = false
+           local Character;
+           local PrimaryPart;
+        
+           local function CharacterAdded(NewCharacter)
+               Character = NewCharacter
+               repeat
+                   wait()
+                   PrimaryPart = NewCharacter:FindFirstChild("HumanoidRootPart")
+               until PrimaryPart
+               Detected = false
+           end
+        
+           CharacterAdded(Player.Character or Player.CharacterAdded:Wait())
+           Player.CharacterAdded:Connect(CharacterAdded)
+           Services.RunService.Heartbeat:Connect(function()
+               if (Character and Character:IsDescendantOf(workspace)) and (PrimaryPart and PrimaryPart:IsDescendantOf(Character)) then
+                   if PrimaryPart.AssemblyAngularVelocity.Magnitude > 50 or PrimaryPart.AssemblyLinearVelocity.Magnitude > 100 then
+                       if Detected == false then
+                           game.StarterGui:SetCore("ChatMakeSystemMessage", {
+                               Text = "Fling Exploit detected, Player: " .. tostring(Player);
+                               Color = Color3.fromRGB(255, 200, 0);
+                           })
+                       end
+                       Detected = true
+                       for i,v in ipairs(Character:GetDescendants()) do
+                           if v:IsA("BasePart") then
+                               v.CanCollide = false
+                               v.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+                               v.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+                               v.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0)
+                           end
+                       end
+                       PrimaryPart.CanCollide = false
+                       PrimaryPart.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+                       PrimaryPart.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+                       PrimaryPart.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0)
+                   end
+               end
+           end)
+        end
+        
+        -- // Event Listeners  --
+        for i,v in ipairs(Services.Players:GetPlayers()) do
+           if v ~= LocalPlayer then
+               PlayerAdded(v)
+           end
+        end
+        Services.Players.PlayerAdded:Connect(PlayerAdded)
+        
+        local LastPosition = nil
+        Services.RunService.Heartbeat:Connect(function()
+           pcall(function()
+               local PrimaryPart = LocalPlayer.Character.PrimaryPart
+               if PrimaryPart.AssemblyLinearVelocity.Magnitude > 250 or PrimaryPart.AssemblyAngularVelocity.Magnitude > 250 then
+                   PrimaryPart.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+                   PrimaryPart.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+                   PrimaryPart.CFrame = LastPosition
+        
+                   game.StarterGui:SetCore("ChatMakeSystemMessage", {
+                       Text = "You were flung. Neutralizing velocity.";
+                       Color = Color3.fromRGB(255, 0, 0);
+                   })
+               elseif PrimaryPart.AssemblyLinearVelocity.Magnitude < 50 or PrimaryPart.AssemblyAngularVelocity.Magnitude > 50 then
+                   LastPosition = PrimaryPart.CFrame
+               end
+           end)
+        end)
+     end)
+    
+        antiSection:NewButton("Anti Crash", "Dont Get you kick or crashed any more", function()
+            local Players = game:GetService("Players")
+            local Workspace = game:GetService("Workspace")
+            
+            Workspace.DescendantRemoving:Connect(function(inst)
+                if inst:IsA("Motor6D") then
+                    local Model = inst.Parent.Parent
+                    if Model:IsA("Model") and Model:FindFirstChildOfClass("Humanoid") then
+                        for i,v in pairs(Model:GetChildren()) do
+                            if v:IsA("Accessory") and v:FindFirstChild("Handle") then
+                                local Cheque = v.Handle:FindFirstChildOfClass("WrapLayer")
+                                if Cheque then
+                                    v:Destroy()
+                                    --print("Destroyed possible crash attempt.")
+                                end
+                            end
+                        end
+                    end
+                end
+            end)
+        end)
+
+
+    
+       --Option
+
+    local Option = Window:NewTab("Options")
+    local OptionSection = Option:NewSection("Main")
+
+    OptionSection:NewKeybind("Toggle UI", "Set Key bind to toggle the UI", Enum.KeyCode.RightAlt, function()
+        Library:ToggleUI()
+    end)
+
+
+end
+
+
+
+
+
+-- Build A Boat
+
+
+if game.PlaceId == 537413528 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("BABFT Gui By Neko#4061", "BloodTheme")
+    
+    
+    
+    local Main = Window:NewTab("Scripts")
+    local MainSection = Main:NewSection("Main")
+    
+    
+    
+    
+    MainSection:NewButton("Auto Farm (afk)", "Works best on Vip Servers", function(i)
+    
+    local vu = game:GetService("VirtualUser")
+    game:GetService("Players").LocalPlayer.Idled:connect(function()
+    vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    wait(1)
+    vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    end)
+    
+    local Number = 0
+    workspace.Gravity = tonumber(Number) or 196.2 
+    
+    local debounce = false
+    game:GetService('RunService').RenderStepped:Connect(function()
+        if debounce == true then
+             return
+            end
+            debounce = true
+    
+    
+    
+    local _speed=1000
+    function tp(...)
+       local plr=game.Players.LocalPlayer
+       local args={...}
+       if typeof(args[1])=="number"and args[2]and args[3]then
+          args=Vector3.new(args[1],args[2],args[3])
+       elseif typeof(args[1])=="Vector3" then
+           args=args[1]    
+       elseif typeof(args[1])=="CFrame" then
+           args=args[1].Position
+       end
+       local dist=(plr.Character.HumanoidRootPart.Position-args).Magnitude
+       game:GetService("TweenService"):Create(
+           plr.Character.HumanoidRootPart,
+           TweenInfo.new(dist/_speed,Enum.EasingStyle.Linear),
+           {CFrame=CFrame.new(args)}
+       ):Play()
+    end
+    
+    tp(0, 75, 1000)
+    
+    
+    
+    wait(1.5)
+    
+    
+    
+    
+        tp(0, 75, 1250)
+        wait(0.5)
+    
+        tp(0, 75, 1500)
+        wait(0.7)
+    
+        tp(0, 75, 1750)
+        wait(0.7)
+    
+        tp(0, 75, 2000)
+        wait(0.7)
+    
+        tp(0, 75, 2250)
+        wait(0.7)
+        
+        tp(0, 75, 2500)
+        wait(0.7)
+        
+        tp(0, 75, 2750)
+        wait(0.7)
+        
+        tp(0, 75, 3000)
+        wait(0.7)
+        
+        tp(0, 75, 3250)
+        wait(0.7)
+        
+        tp(0, 75, 3500)
+        wait(0.7)
+        
+        tp(0, 75, 3750)
+        wait(0.7)
+        
+        tp(0, 75, 4000)
+        wait(0.7)
+        
+        tp(0, 75, 4250)
+        wait(0.7)
+        
+        tp(0, 75, 4500)
+        wait(0.7)
+        
+        tp(0, 75, 4750)
+        wait(0.7)
+        
+        tp(0, 75, 5000)
+        wait(0.7)
+    
+        tp(0, 75, 5250)
+        wait(0.5)
+    
+        tp(0, 75, 5500)
+        wait(0.5)
+    
+        tp(0, 75, 5750)
+        wait(0.5)
+    
+        tp(0, 75, 6000)
+        wait(0.7)
+    
+        tp(0, 75, 6250)
+        wait(0.5)
+    
+        tp(0, 75, 6500)
+        wait(0.5)
+    
+        tp(0, 75, 6750)
+        wait(0.5)
+    
+        tp(0, 75, 7000)
+        wait(0.7) 
+    
+        tp(0, 75, 7250)
+        wait(0.5)
+    
+        tp(0, 75, 7500)
+        wait(0.5)
+    
+        tp(0, 75, 7750)
+        wait(0.7)
+    
+        tp(0, 75, 8000)
+        wait(0.5)
+    
+        tp(0, 75, 8250)
+        wait(0.5)
+    
+        tp(0, 75, 8500)
+        wait(0.5)
+    
+        tp(0, 75, 8750)
+        wait(0.5)
+    
+        tp(0, 75, 9000)
+        wait(0.7)
+    
+    
+    
+        tp(-56, -354, 9492)
+        wait(4,25)
+    
+        tp(-56, -354, 9492)
+        wait(4,25)
+    
+        tp(-56, -354, 9492)
+        wait(11.5)
+    
+        debounce = false
+       end)
+       game:GetService('RunService').RenderStepped:Connect(function()
+        game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+        end)
+    end)
+    
+    
+    MainSection:NewButton("Fast Auto Farm (afk)", "Works best on Vip Servers", function(g)
+    
+        local vu = game:GetService("VirtualUser")
+        game:GetService("Players").LocalPlayer.Idled:connect(function()
+        vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+        wait(1)
+        vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+        end)
+        
+        local Number = 0
+        workspace.Gravity = tonumber(Number) or 196.2 
+        
+        local notdebounce = false
+        game:GetService('RunService').RenderStepped:Connect(function()
+            if notdebounce == true then
+                 return
+                end
+                notdebounce = true
+        
+        
+        
+        local _speed=1000
+        function tp(...)
+           local plr=game.Players.LocalPlayer
+           local args={...}
+           if typeof(args[1])=="number"and args[2]and args[3]then
+              args=Vector3.new(args[1],args[2],args[3])
+           elseif typeof(args[1])=="Vector3" then
+               args=args[1]    
+           elseif typeof(args[1])=="CFrame" then
+               args=args[1].Position
+           end
+           local dist=(plr.Character.HumanoidRootPart.Position-args).Magnitude
+           game:GetService("TweenService"):Create(
+               plr.Character.HumanoidRootPart,
+               TweenInfo.new(dist/_speed,Enum.EasingStyle.Linear),
+               {CFrame=CFrame.new(args)}
+           ):Play()
+        end
+        
+        tp(0, 75, 1000)
+        
+        
+        
+        wait(2)
+        
+        
+        
+        
+            tp(0, 75, 1250)
+            wait(0.4)
+        
+            tp(0, 75, 1500)
+            wait(0.4)
+        
+            tp(0, 75, 1750)
+            wait(0.4)
+        
+            tp(0, 75, 2000)
+            wait(0.4)
+        
+            tp(0, 75, 2250)
+            wait(0.4)
+            
+            tp(0, 75, 2500)
+            wait(0.4)
+            
+            tp(0, 75, 2750)
+            wait(0.4)
+            
+            tp(0, 75, 3000)
+            wait(0.4)
+            
+            tp(0, 75, 3250)
+            wait(0.4)
+            
+            tp(0, 75, 3500)
+            wait(0.4)
+            
+            tp(0, 75, 3750)
+            wait(0.4)
+            
+            tp(0, 75, 4000)
+            wait(0.4)
+            
+            tp(0, 75, 4250)
+            wait(0.4)
+            
+            tp(0, 75, 4500)
+            wait(0.4)
+            
+            tp(0, 75, 4750)
+            wait(0.4)
+            
+            tp(0, 75, 5000)
+            wait(0.4)
+        
+            tp(0, 75, 5250)
+            wait(0.4)
+        
+            tp(0, 75, 5500)
+            wait(0.4)
+        
+            tp(0, 75, 5750)
+            wait(0.4)
+        
+            tp(0, 75, 6000)
+            wait(0.4)
+        
+            tp(0, 75, 6250)
+            wait(0.4)
+        
+            tp(0, 75, 6500)
+            wait(0.4)
+        
+            tp(0, 75, 6750)
+            wait(0.4)
+        
+            tp(0, 75, 7000)
+            wait(0.4) 
+        
+            tp(0, 75, 7250)
+            wait(0.4)
+        
+            tp(0, 75, 7500)
+            wait(0.4)
+        
+            tp(0, 75, 7750)
+            wait(0.4)
+        
+            tp(0, 75, 8000)
+            wait(0.4)
+        
+            tp(0, 75, 8250)
+            wait(0.4)
+        
+            tp(0, 75, 8500)
+            wait(0.45)
+        
+            tp(0, 75, 8750)
+            wait(0.4)
+        
+            tp(0, 75, 9000)
+            wait(0.4)
+        
+        
+        
+            tp(-56, -354, 9492)
+            wait(4,25)
+    
+            tp(-56, -354, 9492)
+            wait(4,25)
+    
+            tp(-56, -354, 9492)
+            wait(11.5)
+    
+         
+        
+            notdebounce = false
+           end)
+           game:GetService('RunService').RenderStepped:Connect(function()
+            game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+            end)
+        end)
+    
+    
+    
+    
+    
+             -- PLAYER
+             local Player = Window:NewTab("Player")
+             local PlayerSection = Player:NewSection("Player")
+         
+                PlayerSection:NewSlider("Walkspeed", "Changes the walkspeed", 500, 16, function(v)
+                   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+                end)
+         
+               PlayerSection:NewSlider("Jumppower", "Changes the jumppower", 250, 50, function(v)
+                    game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+             end)
+    
+    
+    
+    
+    
+             local Guis = Window:NewTab("Other Guis")
+             local GuisSection = Guis:NewSection("Guis")
+         
+          
+             GuisSection:NewButton("Vynixiu's Gui", "Auto farm fly and more...", function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Build%20A%20Boat%20For%20Treasure/BABFT"))()
+            end)
+        
+            GuisSection:NewButton("V G Hub", "Auto farm and more...", function()
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
+            end)
+        
+            GuisSection:NewButton("Black Purple Gui", "Auto farm (waiting for an update)", function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/Toxic-Mods/KupcakeHubGames/main/BuildABoatGold", true))()
+            end)
+        
+            GuisSection:NewButton("SAZA Hub", "Auto farm and more...", function()
+                loadstring(game:HttpGet"https://rawscripts.net/raw/SAZA-HUB_496")()
+            end)
+        
+            GuisSection:NewButton("Auto Farm", "Not made by me", function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vozoid/scripts/master/babft.lua"))()
+            end)
+        
+            GuisSection:NewButton("Auto Farm 2", "Not made by me", function()
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/BoaHacker/ROBLOX/main/cheat', true))()
+            end)
+        
+            GuisSection:NewButton("Auto Farm 3 !sends a chat massege!", "Not made by me", function()
+                _G.autofarm = true
+                loadstring(game:HttpGet('https://gist.githubusercontent.com/cod2rx/d2a7e436d3af135d787529141e6485cc/raw/5bb4df0a94b0a3cf06f0c87a25cb6859e56d23e3/BABFT%2520Autofarm.lua'))()
+            end)
+         
+            GuisSection:NewButton("ECLIPSE X (key)", "A Good Gui by SYL#0011", function()
+                 pcall(function()
+                     loadstring(game:HttpGet("https://raw.githubusercontent.com/ECLIPSEXHUB/ECLIPSE-X/main/ECLIPSE%20X.txt", true))()
+                 end)
+             end)
+         
+             GuisSection:NewButton("infinite yield", "A Gui with fly noclip and more", function()
+                 loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+             end)
+         
+             GuisSection:NewButton("Fate's Admin", "You open it with Ö and you can see cmds with the command cmds", function()
+                 loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
+             end)
+         
+             GuisSection:NewButton("CMD - X", "A Gui with fly noclip and more", function()
+                 loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source",true))()
+             end)
+         
+             GuisSection:NewButton("Dex", "Dex explorer is like roblox studio (you can see the code)", function()
+                 loadstring(game:HttpGet(('https://gist.githubusercontent.com/DinosaurXxX/b757fe011e7e600c0873f967fe427dc2/raw/ee5324771f017073fc30e640323ac2a9b3bfc550/dark%2520dex%2520v4'),true))()
+             end)         
+    
+    
+    
+    
+    
+        
+    
+    
+    
+           --Option
+    
+           local Option = Window:NewTab("Options")
+           local OptionSection = Option:NewSection("Main")
+       
+           OptionSection:NewKeybind("Toggle UI", "Set Key bind to toggle the UI", Enum.KeyCode.RightAlt, function()
+               Library:ToggleUI()
+    end)
+
+
+
+
+
+
+
+
+
+
+
+
+-- Islands
+
+if game.PlaceId == 4872321990 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Islands Gui By Neko#4061", "BloodTheme")
+
+
+    -- Main
+
+    local Main = Window:NewTab("Scripts")
+    local MainSection = Main:NewSection("Main")
+ 
+    MainSection:NewButton("Comming soon", "Auto farm Block Printer and more...", function()
+
+    end)
+
+
+
+
+
+
+
+
+         -- PLAYER
+         local Player = Window:NewTab("Player")
+         local PlayerSection = Player:NewSection("Player")
+     
+        PlayerSection:NewSlider("Walkspeed", "Changes the walkspeed", 500, 16, function(v)
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+        end)
+
+           PlayerSection:NewSlider("Jumppower", "Changes the jumppower", 250, 50, function(v)
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+         end)
+    
+    
+    
+        --Guis
+    
+    
+        local Guis = Window:NewTab("Guis")
+        local GuisSection = Guis:NewSection("Main")
+    
+    
+        GuisSection:NewButton("System Exodus", "Auto farm Block Printer and more...", function()
+            loadstring(game:HttpGet("https://system-exodus.com/scripts/Islands/Islands.lua", true))()
+        end)
+
+        GuisSection:NewButton("infinite yield", "A Gui with fly noclip and more", function()
+            loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+        end)
+    
+        GuisSection:NewButton("Fate's Admin", "You open it with Ö and you can see cmds with the command cmds", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
+        end)
+    
+        GuisSection:NewButton("CMD - X", "A Gui with fly noclip and more", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source",true))()
+        end)
+    
+        GuisSection:NewButton("Dex", "Dex explorer is like roblox studio (you can see the code)", function()
+            loadstring(game:HttpGet(('https://gist.githubusercontent.com/DinosaurXxX/b757fe011e7e600c0873f967fe427dc2/raw/ee5324771f017073fc30e640323ac2a9b3bfc550/dark%2520dex%2520v4'),true))()
+        end)
+
+
+
+    
+       --Option
+
+    local Option = Window:NewTab("Options")
+    local OptionSection = Option:NewSection("Main")
+
+    OptionSection:NewKeybind("Toggle UI", "Set Key bind to toggle the UI", Enum.KeyCode.RightAlt, function()
+        Library:ToggleUI()
+        end)
+    end
+end
